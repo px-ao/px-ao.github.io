@@ -39,6 +39,16 @@
         <li onclick="fmsg()">Salmos</li>
     </div>
     <section class="content">
+        <!--
+            Caixa de Diálogo geral.
+        -->
+        <dialog id="boxmsg">
+            <span class="close" onclick="document.getElementById('boxmsg').close()">&times;</span>
+            <span class="ornamento"><img src="borda1.png" alt="Santa Cruz Ornada" /></span>
+            <p>Ainda está em desenvolvimento.</p>
+            <br/>
+        </dialog>
+
         <span class="ornamento"><img src="borda1.png" alt="Santa Cruz Ornada" /></span>
         <span class="imagemjesus"><img src="pantocrator.png" alt="Pantocrator" /></span>
 
@@ -130,27 +140,19 @@
         <span class="ornamento"><img src="borda1.png" alt="Santa Cruz Ornada" /></span>
     </section>
 
-    <!-- Modal content -->
-    <dialog id="boxmsg">
-
-        
-        <span class="ornamento"><img src="borda1.png" alt="Santa Cruz Ornada" /></span>       
-
-        <p>Ainda está em desenvolvimento.</p>
-        <p>...</p>
-        <span class="close" onclick="document.getElementById('boxmsg').close()">&times;</span>
-    </dialog>
+   
+   
 
     <script>
         function fmsg() {
-           
+
             //var span = document.getElementsByClassName("close")[0];
-            var txtmsg = document.getElementById("boxmsg")
-           // alert("aqui2 " + txtmsg.open.toString())
+            var txtmsg = document.querySelector("#boxmsg")
+            // alert("aqui2 " + txtmsg.open.toString())
             if (txtmsg.open) {
                 txtmsg.close();
             } else {
-                txtmsg.showModal()
+                txtmsg.show()
             }
         }
 
