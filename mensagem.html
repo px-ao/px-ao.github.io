@@ -6,22 +6,9 @@
     <title>Jesus - Alfa e Ômega</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script>
-        function toggleMenu() {
-            var menu = document.querySelector(".menu");
-            var toggle = document.querySelector(".toggle");
-            if (menu.style.display == "none") {
-                menu.style.display = "flex";
-                // toggle.style.backgroundColor = "lightgreen";
-            } else {
-                menu.style.display = "none";
-                toggle.style.display = "flex";
-                //toggle.style.backgroundColor = "lightgray";
-            }
-        }
-    </script>
+   
     <link rel="stylesheet" href="estilo.css">
+    <script src="meujs.js"></script>
 </head>
 
 <body>
@@ -30,12 +17,17 @@
             <img src="logocruzes.png" alt="Três Cruzes">
         </span>
         <div><span id="idtitulo">Jesus - Alfa e Ômega</span></div>
-
+        <link rel="stylesheet" href="estilo.css">
+        <script src="meujs.js"></script>
     </header>
-    <div class="toggle" onclick="toggleMenu()">&#x2630;</div>
-    <div class="menu">
-        <li onclick="document.location.href='index.html'">Início</li>
-        <!-- <li>Salmos</li> -->
+    
+    <div class="cmenu" id="menu">
+        <span class="menuX" onclick="fmenuX()">&#x2716;</span>
+
+        <a href="#" onclick="document.location.href='index.html'">Início</a>
+        <a href="#" onclick="fmsg()">Preces</a>
+        <a href="#" onclick="fmsg()">Salmos</a>
+
     </div>
     <section class="content">
         <span class="ornamento"><img src="borda1.png" alt="Santa Cruz Ornada" /></span>
