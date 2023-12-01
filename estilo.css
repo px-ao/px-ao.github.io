@@ -17,7 +17,7 @@ html {
 
 }
 
-.header { 
+.header {
     display: flex;
     width: 100%;
     position: absolute;
@@ -135,6 +135,7 @@ html {
     font-size: 17px;
 }
 .mensagemTreho_c{
+   
     width: 100%;
     display: block;
     font-style: italic;
@@ -145,6 +146,7 @@ html {
     padding: 16px 70px 0px 70px;
 }
 .mensagemTreho_j{
+    margin-top: 34px;
     width: 100%;
     display: block;
     font-style: italic;
