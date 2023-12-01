@@ -142,7 +142,7 @@ html {
     text-align: center;
     margin: 0px 30px 10px 30px; 
     background-color: transparent;
-    padding: 0px 70px 0px 70px;
+    padding: 16px 70px 0px 70px;
 }
 .mensagemTreho_j{
     width: 100%;
@@ -152,7 +152,7 @@ html {
     text-align: justify;
     margin: 0px 30px 10px 30px; 
     background-color: transparent;
-    padding: 0px 70px 0px 70px;
+    padding: 16px 70px 0px 70px;
 }
 
 .artigo h3 {
