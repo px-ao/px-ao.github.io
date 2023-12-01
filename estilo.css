@@ -106,14 +106,19 @@ html {
     display: block;
     position: absolute;
     float: left;
-    margin-left: 3px;
+    margin-left: 0 auto;  
     background-color: white;
-    padding: 20px;
+    padding: 0px 70px 0px 70px;
     top: 160px;
     font-family: 'Playfair Display', serif;
     font-size: 1rem;
 }
 
+.artigo{
+    margin: 0px 30px 10px 30px; 
+    background-color: white;
+    padding: 0px 70px 0px 70px;
+}
 .artigo p {
     margin-top: 20px;
     text-align: justify;
@@ -136,16 +141,17 @@ html {
 
 .nota {
     display: inline-block;
-    padding: 1px 5px;
-    background-color: #f76c71;
+    background-color: transparent;
     border-radius: 7%;
-    box-shadow: 2px 2px 7px #636368;
+    text-shadow: 2px 2px 7px #f7e013f3;
     font-weight: 600;
-    color: #000;
+    color: #585858;
 }
 
 .nota:hover {
-    background-color: #fa3f45;
+    background-color: #ebea97;
+    padding: 0px;
+    border-radius: 50%;
     cursor: pointer;
 
 }
