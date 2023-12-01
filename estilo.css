@@ -17,7 +17,7 @@ html {
 
 }
 
-.header {
+.header { 
     display: flex;
     width: 100%;
     position: absolute;
