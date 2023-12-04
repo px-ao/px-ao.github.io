@@ -111,16 +111,16 @@ html {
     float: left;
     margin-left: 0 auto;  
     background-color: white;
-    padding: 0px 70px 0px 70px;
+    padding: 0px 57px 0px 57px;
     top: 160px;
     font-family: 'Playfair Display', serif;
     font-size: 1rem;
 }
 
 .artigo{
-    margin: 0px 30px 10px 30px; 
+    margin: 0px 16px 10px 16px; 
     background-color: white;
-    padding: 0px 70px 0px 70px;
+    padding: 0px 25px 0px 25px;
 }
 .artigo p {
     margin-top: 20px;
@@ -141,9 +141,9 @@ html {
     font-style: italic;
     font-size: 17px;
     text-align: center;
-    margin: 0px 30px 10px 30px; 
+    margin: 0px 16px 10px 16px; 
     background-color: transparent;
-    padding: 16px 70px 0px 70px;
+    padding: 16px 57px 0px 57px;
 }
 .mensagemTreho_j{
     margin-top: 34px;
@@ -152,9 +152,9 @@ html {
     font-style: italic;
     font-size: 17px;
     text-align: justify;
-    margin: 0px 30px 10px 30px; 
+    margin: 0px 16px 10px 16px; 
     background-color: transparent;
-    padding: 16px 70px 0px 70px;
+    padding: 16px 57px 0px 57px;
 }
 
 .artigo h3 {
@@ -323,7 +323,7 @@ dialog {
   /* Estilo para o conteúdo da página */
   .content {
     padding: 20px;
-    transition: margin-left .5s;
+    transition: margin-left .7s;
     padding-left: 0;
   }
   
@@ -412,5 +412,27 @@ dialog {
     z-index: 999;
     
  }
+ .mensagemTreho_c{
+   
+    width: 100%;
+    display: block;
+    font-style: italic;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0px 7px 5px 7px; 
+    background-color: transparent;
+    padding: 7px 12px 0px 12px;
+}
+.mensagemTreho_j{
+    margin-top: 34px;
+    width: 100%;
+    display: block;
+    font-style: italic;
+    font-size: 1rem;
+    text-align: justify;
+    margin: 0px 7px 5px 7px; 
+    background-color: transparent;
+    padding: 7px 12px 0px 12px;
+}
 }
 
