@@ -55,3 +55,10 @@ function openNav() {
     document.getElementById("myNavbar").style.width = "0";
     document.querySelector(".content").style.marginLeft= "0";
   }
+  function closeBoxMsg(elemento){
+    elemento.style.display='none'
+  }
+  function fmostraMsg(frase){
+    document.getElementById('idboxmsg').style.display='block'
+    document.getElementById('idMsg').innerHTML=frase; 
+  }

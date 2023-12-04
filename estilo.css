@@ -215,7 +215,15 @@ html {
 .rodape a:hover {
     text-decoration: underline;
 }
-
+#nR{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: var(--verm-geral);
+    font-weight: 600;
+    margin-bottom: 0px;
+    margin-top: 21px;
+}
 .menuOculto {
     display: none;
 
@@ -242,18 +250,22 @@ html {
 }
 
 /* The Modal (background) */
-#boxmsg {
-    padding: 7px;
-    top: 200px;
-    width: 300px;
-    /* Full width */
-    padding: 7px;
-    /* Full height */
-    margin: 0 auto;
-    font-size: 1.33rem;
-    color: var(--verm-geral);
-    border-color: var(--verm-geral);
-}
+
+    div.boxmsg {
+        display: none;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+       bottom:  0;
+        background-color: rgb(54, 54, 54);
+        border: 2px solid #545554;
+        color: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .87rem;
+        padding: 7px 16px 7px 12px;
+      }
+      #fechaMsg{
+
+      }
 
 dialog {
     border-color: #c1272d;
@@ -331,15 +343,17 @@ dialog {
   .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
+    right: .5px;
     font-size: 36px;
     margin-left: 50px;
+    display: inline-block;
   }
   
   /* Adiciona uma cor de fundo ao botão close quando o mouse passa por cima */
   .closebtn:hover {
     background-color: red;
     color: white;
+    cursor: pointer;
   }
 @media  screen and (max-width : 700px)  {
     #fundoimg {
