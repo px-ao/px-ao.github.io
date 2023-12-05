@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/px-ao/px-ao.github.io/issues"
   },
-  "homepage": "https://github.com/px-ao/px-ao.github.io#readme"
+  "homepage": "https://github.com/px-ao/px-ao.github.io#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
 }
