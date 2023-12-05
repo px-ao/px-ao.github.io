@@ -1,0 +1,19 @@
+{
+  "name": "px-ao.github.io",
+  "version": "1.0.0",
+  "description": "Web px-ao",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/px-ao/px-ao.github.io.git"
+  },
+  "author": "Sidney Viana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/px-ao/px-ao.github.io/issues"
+  },
+  "homepage": "https://github.com/px-ao/px-ao.github.io#readme"
+}
