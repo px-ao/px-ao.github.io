@@ -135,13 +135,17 @@ main {
     padding: 0px 25px 0px 25px;
 }
 .artigo p {
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     text-align: justify;
    
 
 
 }
-
+ .artigo h4{
+    color:#38a28f;
+    margin-top: 40px;
+ }
 .prece {
     font-style: italic;
     font-size: 17px;
@@ -216,7 +220,7 @@ main {
 }
 
 .rodape a {
-    text-decoration: none;
+   
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: var(--verm-geral);
@@ -275,9 +279,7 @@ main {
         font-size: .87rem;
         padding: 7px 16px 7px 12px;
       }
-      #fechaMsg{
-
-      }
+    
 
 dialog {
     border-color: #c1272d;
@@ -340,7 +342,7 @@ dialog {
     color: #38a28f;
     z-index: 13;
   }
-  
+ 
   /* Adiciona uma cor de fundo ao ícone do menu quando o mouse passa por cima */
   .icon:hover {
     background-color: #555;
@@ -368,6 +370,9 @@ dialog {
     background-color: red;
     color: white;
     cursor: pointer;
+  }
+  #aqui{
+    text-decoration:underline;
   }
 @media  screen and (max-width : 700px)  {
     #fundoimg {
@@ -675,7 +680,7 @@ html {
 }
 
 .rodape a {
-    text-decoration: none;
+    
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: var(--verm-geral);
@@ -734,9 +739,7 @@ html {
         font-size: .87rem;
         padding: 7px 16px 7px 12px;
       }
-      #fechaMsg{
-
-      }
+    
 
 dialog {
     border-color: #c1272d;

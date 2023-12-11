@@ -3,11 +3,11 @@ function fmsg() {
     //var span = document.getElementsByClassName("close")[0];
     var txtmsg = document.querySelector("#boxmsg")
     // alert("aqui2 " + txtmsg.open.toString())
-   /*  if (txtmsg.open) {
-        txtmsg.close();
-    } else {
-        txtmsg.show()
-    } */
+    /*  if (txtmsg.open) {
+         txtmsg.close();
+     } else {
+         txtmsg.show()
+     } */
     alert("Esta parte está em construção.")
 }
 function fmenuX() {
@@ -49,16 +49,31 @@ function fmenu(elem) {
 function openNav() {
     document.getElementById("myNavbar").style.width = "250px";
     document.querySelector(".content").style.marginLeft = "250px";
-  }
-  
-  function closeNav() {
+}
+
+function closeNav() {
     document.getElementById("myNavbar").style.width = "0";
-    document.querySelector(".content").style.marginLeft= "0";
-  }
-  function closeBoxMsg(elemento){
-    elemento.style.display='none'
-  }
-  function fmostraMsg(frase){
-    document.getElementById('idboxmsg').style.display='block'
-    document.getElementById('idMsg').innerHTML=frase; 
-  }
+    document.querySelector(".content").style.marginLeft = "0";
+}
+function closeBoxMsg(elemento) {
+    elemento.style.display = 'none'
+}
+function fmostraMsg(frase) {
+    let meubox = document.getElementById('idboxmsg')
+    if (meubox.style.display == 'block') {
+        meubox.style.display = 'none'
+        return
+    }
+
+    meubox.style.display = 'block'
+    document.getElementById('idMsg').innerHTML = frase;
+}
+
+window.addEventListener('click', function(event) {
+    let meubox = document.getElementById('idboxmsg');
+    // Verifica se o elemento clicado ou um de seus ancestrais tem a classe 'nota'
+    if (!event.target.closest('.nota')) {
+        // Se não, oculta 'meubox'
+        meubox.style.display = 'none';
+    }
+});
