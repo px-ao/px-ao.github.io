@@ -150,6 +150,12 @@ main {
     font-style: italic;
     font-size: 17px;
 }
+.negrito{
+    font-weight: bold;
+}
+.incliando{
+    font-style: italic;
+}
 .mensagemTreho_c{
    
     width: 100%;
