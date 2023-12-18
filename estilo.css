@@ -324,7 +324,7 @@ dialog {
     left: 0;
     height: 100%;
     width: 0;
-    z-index: 1;
+    z-index: 99;
     transition: 0.5s;
   }
   
@@ -350,10 +350,10 @@ dialog {
     cursor: pointer;
     background-color: rgb(236, 173, 25);
     position: absolute;
-    right: 1px;
-    top: 0;
+    right: 1.6px;
+    top: 1.6px;
     padding: 15px;
-    color: #38a28f;
+    color: #0d6872;
     z-index: 13;
   }
  
@@ -396,7 +396,7 @@ dialog {
         width: 93%;
     }
     #idtitulo{
-        font-size: .97rem;
+        font-size:1.6rem;
     }
     .content {
         width: 100%;
