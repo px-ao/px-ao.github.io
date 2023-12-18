@@ -34,7 +34,7 @@ html {
 }
 
 .header img {
-
+   
     object-fit: cover;
     margin: 0 auto;
 
@@ -155,6 +155,14 @@ main {
 }
 .incliando{
     font-style: italic;
+}
+#idsalmos{
+    display: block;
+    background-color: var(--verm-geral);
+    color: #ffffff;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 12%;
+
 }
 .mensagemTreho_c{
    
@@ -384,7 +392,12 @@ dialog {
     #fundoimg {
         margin-left: 3px
     }
-
+    .header img{
+        width: 70%;
+    }
+    #idtitulo{
+        font-size: .73rem;
+    }
     .content {
         width: 100%;
         margin: 0 auto;
