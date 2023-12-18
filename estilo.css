@@ -36,26 +36,21 @@ html {
 .header img {
    
     object-fit: cover;
-    margin: 0 auto;
+   
 
 }
 
 #fundoimg {
     display: block;
-    position: relative;
-    width: auto;
-    height: auto;
-    top:10px;
+    position: fixed;
+    float: left;
+    top:3px;
     left: 3px ;
-    /* background-color: rgb(255, 255, 255); */
+   
     margin-left: 10px;
     padding: 3px;
-/*     border-bottom: 2.5px solid #38a28f;
-    border-right: 2.5px solid #38a28f; */
     border-radius: 3px;
-    /* box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.798), 0 6px 20px 0 rgba(255, 255, 255, 0.798); */
-
-
+   
 }
 main {
     overflow-y: auto;
@@ -66,7 +61,7 @@ main {
     position: sticky;
     top: 0.2px;
     left: 0.2px;
-    font-size: 1.6rem;
+    font-size: 2.3rem;
     color: black;
     font-weight: 545;
     text-shadow: 2px 2px 7px #ffffff, 2px 4px 7px #ffffff;
@@ -74,7 +69,10 @@ main {
 
 
 }
-
+.header #idtitulo{
+    position: relative;
+    top: 21px;
+}
 .cmenu {
     display: block;
     position: absolute;
@@ -393,10 +391,11 @@ dialog {
         margin-left: 3px
     }
     .header img{
-        width: 93%;
+        width: 84%;
     }
     #idtitulo{
-        font-size:1.6rem;
+        font-size: 1.2rem;
+        left: 30px;
         z-index: 99;
     }
     .navbar{
