@@ -346,7 +346,7 @@ dialog {
   /* Ícone do menu */
   .icon {
     cursor: pointer;
-    background-color: rgb(236, 173, 25);
+    background-color: #ecad19;
     position: absolute;
     float:left;
     left: 3px;
@@ -361,9 +361,9 @@ dialog {
   }
  
   /* Adiciona uma cor de fundo ao ícone do menu quando o mouse passa por cima */
-  .icon:hover {
+   .icon:hover {
     background-color: #f8e091;
-  }
+  } 
   
   /* Estilo para o conteúdo da página */
   .content {

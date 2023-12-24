@@ -54,6 +54,8 @@ function openNav() {
         document.getElementById("myNavbar").style.width = "250px";
         document.querySelector(".content").style.marginLeft = "250px";
         document.querySelector(".icon").innerHTML = "&#x2716;"
+        let objicon = document.querySelector(".icon")
+        objicon.style.backgroundColor = '#c1272d'
         return
     }
     closeNav()
@@ -64,6 +66,8 @@ function closeNav() {
     document.getElementById("myNavbar").style.width = "0";
     document.querySelector(".content").style.marginLeft = "0";
     document.querySelector(".icon").innerHTML = "&#9776;"
+    let objicon = document.querySelector(".icon")
+    objicon.style.backgroundColor = '#ecad19'
 }
 function closeBoxMsg(elemento) {
     elemento.style.display = 'none'
