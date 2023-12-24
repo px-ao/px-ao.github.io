@@ -47,13 +47,23 @@ function fmenu(elem) {
 }); */
 
 function openNav() {
-    document.getElementById("myNavbar").style.width = "250px";
-    document.querySelector(".content").style.marginLeft = "250px";
+    let valor = '\u2630'
+    //alert(document.querySelector(".icon").innerText.charCodeAt(0))
+    //alert(valor.charCodeAt(0))
+    if (document.querySelector(".icon").innerText.charCodeAt(0) === valor.charCodeAt(0)){
+        document.getElementById("myNavbar").style.width = "250px";
+        document.querySelector(".content").style.marginLeft = "250px";
+        document.querySelector(".icon").innerHTML = "&#x2716;"
+        return
+    }
+    closeNav()
 }
 
 function closeNav() {
+    let valor = '\u2716'
     document.getElementById("myNavbar").style.width = "0";
     document.querySelector(".content").style.marginLeft = "0";
+    document.querySelector(".icon").innerHTML = "&#9776;"
 }
 function closeBoxMsg(elemento) {
     elemento.style.display = 'none'

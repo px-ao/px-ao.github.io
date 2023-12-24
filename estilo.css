@@ -348,16 +348,21 @@ dialog {
     cursor: pointer;
     background-color: rgb(236, 173, 25);
     position: absolute;
-    right: 1.6px;
-    top: 1.6px;
-    padding: 15px;
+    float:left;
+    left: 3px;
+    top: 0px;
+    padding: 7px;
     color: #0d6872;
     z-index: 13;
+    border: rgb(238, 238, 73) 1px solid;
+    border-radius: 7px;
+    border-style:outset;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
   }
  
   /* Adiciona uma cor de fundo ao ícone do menu quando o mouse passa por cima */
   .icon:hover {
-    background-color: #555;
+    background-color: #f8e091;
   }
   
   /* Estilo para o conteúdo da página */
@@ -466,6 +471,7 @@ dialog {
     /* width: 30px; */
     color:#4CAF50;
     z-index: 999;
+
     
  }
  .mensagemTreho_c{
