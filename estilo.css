@@ -154,6 +154,10 @@ main {
 .incliando{
     font-style: italic;
 }
+.comentario{
+   
+    font-size: 17px;
+}
 #idsalmos{
     display: block;
     background-color: var(--verm-geral);
