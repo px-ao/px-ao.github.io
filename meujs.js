@@ -88,6 +88,9 @@ window.addEventListener('click', function(event) {
     // Verifica se o elemento clicado ou um de seus ancestrais tem a classe 'nota'
     if (!event.target.closest('.nota')) {
         // Se não, oculta 'meubox'
-        meubox.style.display = 'none';
+        if (meubox) {
+            meubox.style.display = 'none'; 
+        }
+        
     }
 });

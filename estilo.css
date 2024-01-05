@@ -42,7 +42,7 @@ html {
 
 #fundoimg {
     display: block;
-    position: fixed;
+    position: relative;
     float: left;
     top:3px;
     left: 3px ;
@@ -58,7 +58,7 @@ main {
 }
 .header div {
     flex: 1;
-    position: sticky;
+    position: relative;
     top: 0.2px;
     left: 0.2px;
     font-size: 2.3rem;
@@ -142,7 +142,7 @@ main {
 }
  .artigo h4{
     color:#38a28f;
-    margin-top: 40px;
+    margin-top: 16px;
  }
 .prece {
     font-style: italic;
@@ -191,9 +191,9 @@ main {
 
 .artigo h3 {
     color: var(--verm-geral);
-    margin-top: 7px;
-    margin-bottom: 7px;
-    padding: 5.2px;
+    margin-top: 16px;
+    margin-bottom: 2px;
+    padding: 3px;
 }
 
 .nota {
