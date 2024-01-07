@@ -59,6 +59,7 @@ main {
 .header div {
     flex: 1;
     position: relative;
+    margin-left: 3px;
     top: 0.2px;
     left: 0.2px;
     font-size: 2.3rem;
@@ -70,6 +71,7 @@ main {
 
 }
 .header #idtitulo{
+   
     position: relative;
     top: 21px;
 }
@@ -404,9 +406,10 @@ dialog {
         width: 84%;
     }
     #idtitulo{
-        font-size: 1.2rem;
-        left: 30px;
-        z-index: 99;
+        font-size: 1.11rem;
+        float:left;
+        left: 0px;
+        z-index: 999;
     }
     .navbar{
         z-index: 9999;
