@@ -1,3 +1,34 @@
+function fnavega() {
+
+    let strnav = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<a class="active" href="index.html">Início</a>
+<a href="#" onclick="document.location.href='mensagem.html'">Mensagens</a>
+<a href="#" onclick="fmsg()">Preces</a>
+<a href="#" onclick="fmsg()">Salmos</a>`
+
+    let strdatas = `<span type="button" id="idvolta">&#9194;</span>
+<span id="iddatas" type="button">Datas</span>
+<span type="button" id="idsegue">&#9193;</span>`
+
+    document.getElementById("myNavbar").innerHTML = strnav
+
+    if (document.getElementById("subnav")) {
+        document.getElementById("subnav").innerHTML = strdatas
+    }
+
+    const caminho = window.location.pathname;
+    const partesDoCaminho = caminho.split('/'); // Divide o caminho em partes
+
+    // O último elemento do array é o nome do arquivo
+    const nomeDoArquivo = partesDoCaminho[partesDoCaminho.length - 1];
+    
+    //if ( Number(nomeDoArquivo.substring(0,4)) > 1 ){
+
+   // }
+
+
+}
+
 function fmsg() {
 
     //var span = document.getElementsByClassName("close")[0];
@@ -36,21 +67,13 @@ function fmenu(elem) {
     console.log(vmenu.style.display);
 
 }
-/* window.addEventListener('load', function() {
-    if (window.screen.width > 1000) {
-        //alert(window.screen.width)
-    let menuX = document.querySelector(".menuX");
-    let menuO = document.querySelector("#idmO")
-    menuX.style.display = 'none'
-    menuO.style.display = 'none'
-    } 
-}); */
+
 
 function openNav() {
     let valor = '\u2630'
     //alert(document.querySelector(".icon").innerText.charCodeAt(0))
     //alert(valor.charCodeAt(0))
-    if (document.querySelector(".icon").innerText.charCodeAt(0) === valor.charCodeAt(0)){
+    if (document.querySelector(".icon").innerText.charCodeAt(0) === valor.charCodeAt(0)) {
         document.getElementById("myNavbar").style.width = "250px";
         document.querySelector(".content").style.marginLeft = "250px";
         document.querySelector(".icon").innerHTML = "&#x2716;"
@@ -83,14 +106,14 @@ function fmostraMsg(frase) {
     document.getElementById('idMsg').innerHTML = frase;
 }
 
-window.addEventListener('click', function(event) {
+window.addEventListener('click', function (event) {
     let meubox = document.getElementById('idboxmsg');
     // Verifica se o elemento clicado ou um de seus ancestrais tem a classe 'nota'
     if (!event.target.closest('.nota')) {
         // Se não, oculta 'meubox'
         if (meubox) {
-            meubox.style.display = 'none'; 
+            meubox.style.display = 'none';
         }
-        
+
     }
 });
