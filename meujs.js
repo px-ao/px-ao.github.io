@@ -4,7 +4,7 @@ function fnavega() {
 <a class="active" href="index.html">Início</a>
 <a href="#" onclick="document.location.href='mensagem.html'">Mensagens</a>
 <a href="#" onclick="fmsg()">Preces</a>
-<a href="#" onclick="fmsg()">Salmos</a>`
+<a href="salmos.html" >Salmos</a>`
 
     let strdatas = `<span type="button" id="idvolta">&#9194;</span>
 <span id="iddatas" type="button">Datas</span>

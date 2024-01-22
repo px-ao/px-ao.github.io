@@ -413,8 +413,39 @@ dialog {
    box-shadow: 2px 2px 17px hsla(0, 1%, 29%, 0.302);
    cursor: pointer;
 }
-
-
+#lsalmos{
+    
+    width: 77px;
+   
+}
+#lsamos2{
+    border-bottom: 1px solid #000;
+}
+#inputsalmo{
+    display: flex;
+}
+#idbuscarsalmo{
+    display: block;
+    font-size: 18px;
+    border:#000 solid 1px;
+    padding: 1px 7px 1px 7px;
+    margin-left: 3px;
+    font-weight: bold;
+    background-color: #38a28f;
+}
+#idbuscarsalmo:hover{
+    cursor: pointer;
+    color:darkslategrey;
+    background-color: #ebea97;
+}
+#idtsalmo {
+	text-align: center;
+	font-size: 2em;
+}
+#idlabel{
+    display: block;
+    margin-right: 5px;
+}
 #idvolta, #idsegue{
     display: block;
     padding: 3px;
