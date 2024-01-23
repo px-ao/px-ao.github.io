@@ -32,12 +32,13 @@
         <!-- Ícone do menu -->
         <div class="icon" onclick="openNav()">&#9776;</div>
 
-
+        <div id="idsalterio">Saltério</div><br>
         <article class="artigo">
-            <h3>Saltério</h3>
+           
             <div id="inputsalmo">
+                
                 <div id="idlabel">
-                <label for="lsalmos">Salmos  </label> 
+                    <label for="lsalmos">Salmos </label>
                 </div>
                 <input list="lsalmos2" id="lsalmos" size="3" minlength="1" maxlength="3" type="number">
                 <datalist id="lsalmos2">
@@ -192,12 +193,16 @@
                     <option value="149">
                     <option value="150">
 
-                </datalist> <span id="idbuscarsalmo" onclick="DicSalmos()">&#8981;</span>
+                </datalist>
+                <button type="button" id="idbuscarsalmo" onclick="DicSalmos()">
+                    &#8981;
+                </button>
+              
             </div>
+
             <div id="dicsalmo">
 
             </div>
-
 
 
 
