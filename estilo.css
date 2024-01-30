@@ -564,9 +564,9 @@ dialog {
  .icon {
     float: left;
     /* margin-top: 160px; */
-    padding: 3px;
+    padding: 5.2px;
     /* width: 30px; */
-    color:#4CAF50;
+    
     z-index: 999;
 
     
