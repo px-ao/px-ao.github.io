@@ -6,14 +6,27 @@ function fnavega() {
 <a href="#" onclick="fmsg()">Preces</a>
 <a href="salmos.html" >Salmos</a>`
 
-    let strdatas = `<span type="button" id="idvolta">&#9194;</span>
-<span id="iddatas" type="button">Datas</span>
-<span type="button" id="idsegue">&#9193;</span>`
+    let strdatas = `         <div id="navmens">
+    <span id="idvoltarm" onclick="fmensagens(-1)" >&#x25C0;</span>
+    <span id="idindicem" onclick="document.location.href='mensagem.html'">Índice</span>
+    <span id="idseguirm" onclick="fmensagens(1)">&#x25B6;</span>
+ </div>`
+
 
     document.getElementById("myNavbar").innerHTML = strnav
 
-    if (document.getElementById("subnav")) {
-        document.getElementById("subnav").innerHTML = strdatas
+
+    let path = window.location.pathname; // Pega o caminho da URL
+    let page = path.split("/").pop(); // Remove tudo antes da última barra
+    let partes = page.split("_"); // Isso retorna um array ["0001", "15112023.html"]
+
+    if (document.getElementById("nvmens")) {
+        return
+    }
+
+    if (Number(partes[0]) >= 1) {
+        let local1 = document.querySelector(".imagemjesus")
+        local1.insertAdjacentHTML('afterend', strdatas) = strdatas
     }
 
     const caminho = window.location.pathname;
@@ -21,14 +34,42 @@ function fnavega() {
 
     // O último elemento do array é o nome do arquivo
     const nomeDoArquivo = partesDoCaminho[partesDoCaminho.length - 1];
-    
+
     //if ( Number(nomeDoArquivo.substring(0,4)) > 1 ){
 
-   // }
+    // }
 
 
 }
+function fmensagens(valsoma) {
 
+    let path = window.location.pathname; // Pega o caminho da URL
+    let page = path.split("/").pop(); // Remove tudo antes da última barra
+    let partes = page.split("_"); // Isso retorna um array ["0001", "15112023.html"]
+    let numeropage = Number(partes[0]); // Isso pega a primeira parte da string, que é "0001"
+    let vmens = ["0001_15112023.html", "0002_28112023.html", "0003_10122023.html", "0004_12122023.html", "0005_26122023.html", "0006_30122023.html", "0007_03012024.html", "0008_15012024.html", "0009_28012024.html"]
+
+    if (valsoma == -1) {
+        numeropage = numeropage - 2
+
+
+    }
+
+
+    if (numeropage == vmens.length) {
+
+        numeropage = 0
+
+
+    } else if (numeropage < 0) {
+
+        numeropage = vmens.length - 1;
+
+    }
+
+    path = path.replace(page, vmens[numeropage])
+    window.location.href = path
+}
 function fmsg() {
 
     //var span = document.getElementsByClassName("close")[0];

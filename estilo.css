@@ -275,13 +275,44 @@ main {
     margin-top: 7px;
     padding: 5.2px;
 }
-
+#navmens{
+    display: flex;
+    justify-content: center;
+}
+#idseguirm, #idvoltarm{
+    display: block;
+    padding: 3px;
+    color: #0d6872;
+   margin: 0 16px;
+   
+}
+#idindicem {
+    display: block;
+    padding: 4px;
+    background-color: #0d6872;
+    border: #0d6872 1px solid;
+    color: white;
+}
+#idseguirm:hover{
+    cursor: pointer;
+color: #38a28f;
+} 
+#idvoltarm:hover{
+    cursor: pointer;
+    color: #38a28f;  
+}
+#idindicem:hover {
+cursor: pointer;
+color:#acf6e8;
+background-color: #38a28f;
+}
 .imagemjesus {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 7px;
     padding: 5.2px;
+    
 }
 
 /* The Modal (background) */
