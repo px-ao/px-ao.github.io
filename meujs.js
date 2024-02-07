@@ -35,24 +35,17 @@ function fnavega() {
     // O último elemento do array é o nome do arquivo
     const nomeDoArquivo = partesDoCaminho[partesDoCaminho.length - 1];
 
-    //if ( Number(nomeDoArquivo.substring(0,4)) > 1 ){
-
-    // }
-
-
 }
 function fmensagens(valsoma) {
 
     let path = window.location.pathname; // Pega o caminho da URL
     let page = path.split("/").pop(); // Remove tudo antes da última barra
     let partes = page.split("_"); // Isso retorna um array ["0001", "15112023.html"]
-    let numeropage = Number(partes[0]); // Isso pega a primeira parte da string, que é "0001"
-    let vmens = ["0001_15112023.html", "0002_28112023.html", "0003_10122023.html", "0004_12122023.html", "0005_26122023.html", "0006_30122023.html", "0007_03012024.html", "0008_15012024.html", "0009_28012024.html"]
+    let numeropage = Number(partes[0]); // Isso pega a primeira parte da string, exemplo '0001_01012020' retorna "0001"
+    let vmens = ["0001_15112023.html", "0002_28112023.html", "0003_10122023.html", "0004_12122023.html", "0005_26122023.html", "0006_30122023.html", "0007_03012024.html", "0008_15012024.html", "0009_28012024.html", "0010_05022024.html"]
 
     if (valsoma == -1) {
         numeropage = numeropage - 2
-
-
     }
 
 
@@ -60,11 +53,9 @@ function fmensagens(valsoma) {
 
         numeropage = 0
 
-
     } else if (numeropage < 0) {
 
         numeropage = vmens.length - 1;
-
     }
 
     path = path.replace(page, vmens[numeropage])
@@ -74,13 +65,7 @@ function fmsg() {
 
     //var span = document.getElementsByClassName("close")[0];
     var txtmsg = document.querySelector("#boxmsg")
-    // alert("aqui2 " + txtmsg.open.toString())
-    /*  if (txtmsg.open) {
-         txtmsg.close();
-     } else {
-         txtmsg.show()
-     } */
-    alert("Esta parte está em construção.")
+     alert("Esta parte está em construção.")
 }
 function fmenuX() {
 

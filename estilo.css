@@ -282,29 +282,29 @@ main {
 #idseguirm, #idvoltarm{
     display: block;
     padding: 3px;
-    color: #0d6872;
+    color: #c1272d;
    margin: 0 16px;
    
 }
 #idindicem {
     display: block;
     padding: 4px;
-    background-color: #0d6872;
-    border: #0d6872 1px solid;
+    background-color:#c1272d;
     color: white;
 }
 #idseguirm:hover{
     cursor: pointer;
-color: #38a28f;
+color: #fa9194;
+
 } 
 #idvoltarm:hover{
     cursor: pointer;
-    color: #38a28f;  
+    color:#fa9194; 
 }
 #idindicem:hover {
 cursor: pointer;
-color:#acf6e8;
-background-color: #38a28f;
+color:#6e1400;
+background-color:#fa9194;
 }
 .imagemjesus {
     display: flex;
