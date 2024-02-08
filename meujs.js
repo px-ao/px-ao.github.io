@@ -2,8 +2,8 @@ function fnavega() {
 
     let strnav = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <a class="active" href="index.html">Início</a>
-<a href="#" onclick="document.location.href='mensagem.html'">Mensagens</a>
-<a href="#" onclick="fmsg()">Preces</a>
+<a href="mensagem.html" >Mensagens</a>
+<a href="oracoes.html" >Preces</a>
 <a href="salmos.html" >Salmos</a>`
 
     let strdatas = `         <div id="navmens">

@@ -516,6 +516,20 @@ dialog {
    text-align: center;
 
 }
+.ladainha{
+    display: block;
+    margin: 10px 30%;
+    color: var(--verm-geral) !important;
+    font-style: italic;
+    font-weight: bolder;
+}
+.ladainhas {
+    display: block;
+    
+   margin: 20px 21%;
+    
+}
+
 @media  screen and (max-width : 700px)  {
     #fundoimg {
         float:left;
