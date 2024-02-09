@@ -36,6 +36,29 @@ function fnavega() {
     const nomeDoArquivo = partesDoCaminho[partesDoCaminho.length - 1];
 
 }
+function openPage(pageName, elmnt) {
+    var i, tabcontent, tablinks;
+  
+    // Oculte todos os elementos com a classe "tabcontent"
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+  
+    // Remova a cor de fundo de todos os botões
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    // apaga conteúdo
+    document.getElementById("idladanhinhas" ).style.display = "none"
+    // Mostre o conteúdo específico da aba
+    document.getElementById(pageName).style.display = "block";
+  
+    // Adicione a classe "active" ao botão clicado
+    elmnt.style.backgroundColor = "#fad379";
+  }
+  
 function fmensagens(valsoma) {
 
     let path = window.location.pathname; // Pega o caminho da URL
