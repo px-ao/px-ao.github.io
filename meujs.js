@@ -38,8 +38,10 @@ function fnavega() {
 }
 function openPage(pageName, elmnt) {
     var i, tabcontent, tablinks;
-  
-    // Oculte todos os elementos com a classe "tabcontent"
+    if (document.getElementById("idladanhinhas" ) ){
+        document.getElementById("idladanhinhas" ).innerHTML = " "
+    }
+    
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
@@ -51,7 +53,7 @@ function openPage(pageName, elmnt) {
       tablinks[i].style.backgroundColor = "";
     }
     // apaga conteúdo
-    document.getElementById("idladanhinhas" ).style.display = "none"
+   
     // Mostre o conteúdo específico da aba
     document.getElementById(pageName).style.display = "block";
   
