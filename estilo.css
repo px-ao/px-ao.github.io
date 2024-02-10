@@ -668,12 +668,12 @@ dialog {
 }
 .ladainha{
     display: block;
-    margin: 1px 2%;
+    margin: 30px 2%;
 }
 .ladainhas {
     display: block;
     
-   margin: 2px 3%;
+   margin: 2px 3% 12px auto;
     
 }
 .tablink {
