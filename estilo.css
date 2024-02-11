@@ -558,10 +558,7 @@ dialog {
     height: 100%;
    
   }
-.tabcontent h3{
-    display: block;
-    margin: 10px 10px;
-}
+
 @media  screen and (max-width : 700px)  {
     #fundoimg {
         float:left;
