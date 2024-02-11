@@ -529,6 +529,7 @@ dialog {
    margin: 20px 16%;
     
 }
+
 .tablink {
     background-color: #ecbb48;
     color: white;
@@ -539,6 +540,8 @@ dialog {
     padding: 14px 7px;
     font-size: 17px;
     width: 21%;
+    margin-bottom: 30px;
+    
   }
   
   .tablink:hover {
@@ -553,6 +556,7 @@ dialog {
     padding: 12px 20px;
     border-top: none;
     height: 100%;
+   
   }
 .tabcontent h3{
     display: block;
@@ -679,4 +683,4 @@ dialog {
 .tablink {
     width: 33.3%;
 }
-
+}

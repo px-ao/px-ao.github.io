@@ -34,7 +34,15 @@ function fnavega() {
 
     // O último elemento do array é o nome do arquivo
     const nomeDoArquivo = partesDoCaminho[partesDoCaminho.length - 1];
+ftab()
+}
 
+function ftab() {
+   // alert('aqui')
+    let ele1 = document.getElementsByClassName("tablink") 
+    let tam1 = ele1[0].clientHeight
+    ele1[1].style.height = tam1+ "px";  
+    //alert(tam1) 
 }
 function openPage(pageName, elmnt) {
     var i, tabcontent, tablinks;
@@ -156,6 +164,16 @@ function fmostraMsg(frase) {
     meubox.style.display = 'block'
     document.getElementById('idMsg').innerHTML = frase;
 }
+
+let ele1 = document.getElementsByClassName("tablink") 
+console.log(ele1[0].style.length)
+ele1.addEventListener ('load', function(event) {
+    for (let i=0; ele1.length; i++){
+
+    }
+
+});
+
 
 window.addEventListener('click', function (event) {
     let meubox = document.getElementById('idboxmsg');
