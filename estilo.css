@@ -71,7 +71,7 @@ main {
 
 }
 .header #idtitulo{
-   
+    color: #6e1400;
     position: relative;
     top: 21px;
 }
@@ -570,7 +570,7 @@ dialog {
     #idtitulo{
         font-size: 1.11rem;
         float:left;
-        left: 0px;
+        left: 34px;
         z-index: 999;
     }
     .navbar{
