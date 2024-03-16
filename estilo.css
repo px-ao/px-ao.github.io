@@ -306,6 +306,12 @@ cursor: pointer;
 color:#6e1400;
 background-color:#fa9194;
 }
+.a_estilo1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#6e1400;
+}
 .imagemjesus {
     display: flex;
     justify-content: center;
