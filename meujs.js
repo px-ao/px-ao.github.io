@@ -37,7 +37,7 @@ function fnavega() {
 ftab()
 }
 
-function ftab() {
+function ftab() { // essa função mostra o tamanho vertical da tela, um debug, não é usada sem tirar comentário do alert final
    // alert('aqui')
     let ele1 = document.getElementsByClassName("tablink") 
     let tam1 = ele1[0].clientHeight
@@ -77,7 +77,7 @@ function fmensagens(valsoma) {
     let numeropage = Number(partes[0]); // Isso pega a primeira parte da string, exemplo '0001_01012020' retorna "0001"
     let vmens = ["0001_15112023.html", "0002_28112023.html", "0003_10122023.html", "0004_12122023.html", "0005_26122023.html", 
     "0006_30122023.html", "0007_03012024.html", "0008_15012024.html", "0009_28012024.html", "0010_05022024.html","0011_12022024.html",
-    "0012_21022024.html","0013_26022024.html","0014_01032024.html","0015_04032024.html","0016_28032024.html","0017_03052024.html"]
+    "0012_21022024.html","0013_26022024.html","0014_01032024.html","0015_04032024.html","0016_28032024.html","0017_03052024.html","0018_11052024.html"]
 
     if (valsoma == -1) {
         numeropage = numeropage - 2
