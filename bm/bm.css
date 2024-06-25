@@ -1,0 +1,18 @@
+/* Estilize o slideshow */
+.slideshow {
+    display: flex;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Estilize as imagens */
+.slideshow img {
+    width: 100%;
+    opacity: 0;
+    transition: transform 2s ease; /* Tempo de transição entre os slides */
+}
+
+/* Adicione a classe para mostrar o slide ativo */
+.slideshow img.active {
+    /*transform: translateX(0);*/
+}
