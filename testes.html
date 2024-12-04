@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="200" height="200" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+// Get the canvas and context
+var canvas = document.getElementById('myCanvas');
+var ctx = canvas.getContext('2d');
+
+// Set the fill color and stroke color for the circle
+ctx.fillStyle = 'blue';
+ctx.strokeStyle = 'black';
+
+// Draw the circle
+ctx.beginPath();
+ctx.arc(50, 50, 40, 0, 2 * Math.PI);
+ctx.fill();
+ctx.stroke();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+<a onclick="fmostraMsg(document.getElementById('ancora1').innerHTML)" ><sup id="volta1" class="nota">[1]</sup></a>
+<p id="ancora1"> 
+                    
+</p>
