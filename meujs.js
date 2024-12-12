@@ -26,7 +26,7 @@ function fnavega() {
 
     if (Number(partes[0]) >= 1) {
         let local1 = document.querySelector(".imagemjesus")
-        local1.insertAdjacentHTML('afterend', strdatas) = strdatas
+        local1.insertAdjacentHTML('afterend', strdatas) 
     }
 
     const caminho = window.location.pathname;
@@ -34,16 +34,10 @@ function fnavega() {
 
     // O último elemento do array é o nome do arquivo
     const nomeDoArquivo = partesDoCaminho[partesDoCaminho.length - 1];
-ftab()
+
 }
 
-function ftab() { // essa função mostra o tamanho vertical da tela, um debug, não é usada sem tirar comentário do alert final
-   // alert('aqui')
-    let ele1 = document.getElementsByClassName("tablink") 
-    let tam1 = ele1[0].clientHeight
-    ele1[1].style.height = tam1+ "px";  
-    //alert(tam1) 
-}
+
 function openPage(pageName, elmnt) {
     var i, tabcontent, tablinks;
     if (document.getElementById("idladanhinhas" ) ){
@@ -81,7 +75,7 @@ function fmensagens(valsoma) {
     "0013_26022024.html","0014_01032024.html","0015_04032024.html","0016_28032024.html","0017_03052024.html",
     "0018_11052024.html",    "0019_15052024.html","0020_18052024.html","0021_24052024.html", "0022_03062024.html",
     "0023_24062024.html",  "0025_27082024.html", "0026_19092024.html","0027_25092024.html","0028_04102024.html","0029_30102024.html",
-    "0030_02112024.html"]
+    "0030_02112024.html","0029_1212024.html"]
     let pos = vmens.indexOf(page);
     //alert("posição:" + pos)
     
@@ -171,14 +165,7 @@ function fmostraMsg(frase) {
     document.getElementById('idMsg').innerHTML = frase;
 }
 
-let ele1 = document.getElementsByClassName("tablink") 
-console.log(ele1[0].style.length)
-ele1.addEventListener ('load', function(event) {
-    for (let i=0; ele1.length; i++){
 
-    }
-
-});
 
 
 window.addEventListener('click', function (event) {
