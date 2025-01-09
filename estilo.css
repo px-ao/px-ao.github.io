@@ -41,16 +41,22 @@ html {
 }
 
 #fundoimg {
-    display: block;
+    display: flex;
     position: relative;
     float: left;
     top:3px;
     left: 3px ;
-   
-    margin-left: 10px;
+    
+    margin-left: 1px;
     padding: 3px;
     border-radius: 3px;
    
+}
+#fundoimg img{
+    width: 73%; 
+    height: auto;
+    background-color: #ffffff;
+
 }
 main {
     overflow-y: auto;
@@ -71,9 +77,10 @@ main {
 
 }
 .header #idtitulo{
-    color: #6e1400;
+    color: #dcc204;
     position: relative;
     top: 21px;
+    font-size: 32px;
 }
 .cmenu {
     display: block;
@@ -573,19 +580,30 @@ dialog {
   }
 
 @media  screen and (max-width : 700px)  {
-    #fundoimg {
-        float:left;
-        margin-left: 3px;
-    }
-    .header img{
-        width: 84%;
-    }
-    #idtitulo{
+    .header #idtitulo{
+        position:absolute;
+        top: 15px;
         font-size: 1.11rem;
         float:left;
-        left: 34px;
-        z-index: 999;
+        left: 182px;
+        z-index: 9999;
     }
+    #fundoimg {
+        float:left;
+        margin-left: 1px;
+    }
+    #fundoimg img{
+        float:left;
+        margin-left: 1px;
+        width: 70%;
+        height: auto;
+
+    }
+    /* .header img{
+        width: 33%;
+        height: auto;
+    } */
+
     .navbar{
         z-index: 9999;
     }
