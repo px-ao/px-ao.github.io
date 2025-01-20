@@ -26,7 +26,7 @@ function fnavega() {
 
     if (Number(partes[0]) >= 1) {
         let local1 = document.querySelector(".imagemjesus")
-        local1.insertAdjacentHTML('afterend', strdatas) 
+        local1.insertAdjacentHTML('afterend', strdatas)
     }
 
     const caminho = window.location.pathname;
@@ -40,29 +40,29 @@ function fnavega() {
 
 function openPage(pageName, elmnt) {
     var i, tabcontent, tablinks;
-    if (document.getElementById("idladanhinhas" ) ){
-        document.getElementById("idladanhinhas" ).innerHTML = " "
+    if (document.getElementById("idladanhinhas")) {
+        document.getElementById("idladanhinhas").innerHTML = " "
     }
-    
+
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+        tabcontent[i].style.display = "none";
     }
-  
+
     // Remova a cor de fundo de todos os botões
     tablinks = document.getElementsByClassName("tablink");
     for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].style.backgroundColor = "";
+        tablinks[i].style.backgroundColor = "";
     }
     // apaga conteúdo
-   
+
     // Mostre o conteúdo específico da aba
     document.getElementById(pageName).style.display = "block";
-  
+
     // Adicione a classe "active" ao botão clicado
     elmnt.style.backgroundColor = "#fad379";
-  }
-  
+}
+
 function fmensagens(valsoma) {
 
     let path = window.location.pathname; // Pega o caminho da URL
@@ -70,14 +70,14 @@ function fmensagens(valsoma) {
     //let partes = page.split("_"); // Isso retorna um array ["0001", "15112023.html"]
     //alert("Página atual:" + page)
     let numeropage = 0 //Number(partes[0]); // Isso pega a primeira parte da string, exemplo '0001_01012020' retorna "0001"
-    let vmens = [ "0008_15012024.html", "0009_28012024.html",  "0012_21022024.html",
-    "0013_26022024.html","0014_01032024.html","0015_04032024.html","0016_28032024.html","0017_03052024.html",
-    "0018_11052024.html",    "0019_15052024.html","0020_18052024.html","0021_24052024.html", "0022_03062024.html",
-    "0023_24062024.html",  "0025_27082024.html", "0026_19092024.html","0027_25092024.html","0028_04102024.html","0029_30102024.html",
-    "0030_02112024.html","0029_1212024.html","0032_13122024.html","0033_16122024.html", "0034_06012025.html"]
+    let vmens = ["0008_15012024.html", "0009_28012024.html", "0012_21022024.html",
+        "0013_26022024.html", "0014_01032024.html", "0015_04032024.html", "0016_28032024.html", "0017_03052024.html",
+        "0018_11052024.html", "0019_15052024.html", "0020_18052024.html", "0021_24052024.html", "0022_03062024.html",
+        "0023_24062024.html", "0025_27082024.html", "0026_19092024.html", "0027_25092024.html", "0028_04102024.html", "0029_30102024.html",
+        "0030_02112024.html", "0029_1212024.html", "0032_13122024.html", "0033_16122024.html", "0034_06012025.html", "0035_17012025.html"]
     let pos = vmens.indexOf(page);
     //alert("posição:" + pos)
-    
+
     if (valsoma == 1 && pos == vmens.length - 1) {
 
         numeropage = 0
@@ -97,7 +97,7 @@ function fmsg() {
 
     //var span = document.getElementsByClassName("close")[0];
     var txtmsg = document.querySelector("#boxmsg")
-     alert("Esta parte está em construção.")
+    alert("Esta parte está em construção.")
 }
 function fmenuX() {
 
@@ -179,6 +179,6 @@ window.addEventListener('click', function (event) {
     }
 });
 function fbiblia() {
-    document.location.href="/bibliajerusalem/";
-    
+    document.location.href = "/bibliajerusalem/";
+
 }
