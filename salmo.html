@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head> 
+    <meta charset="UTF-8">
+    <title>Nosso Senhor Jesus Cristo<br>Alfa e Ômega</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/jpeg" href="favoicon.jpg">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="meujs.js"></script>
+</head>
+
+<body>
+    <header class="header" id="idheader">
+        <span id="fundoimg">
+            <img src="logo.png" alt="Logo">
+        </span>
+        <span id="idtitulo">Nosso Senhor Jesus Cristo<br>Alfa e Ômega</span>
+        <link rel="stylesheet" href="estilo.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs
+        /FileSaver.js/2.0.5/FileSaver.min.js"></script>
+        <script src="meujs.js"></script>
+    </header>
+    
+    <!-- Ícone do menu -->
+<div class="icon" onclick="openNav()">&#9776;</div>
+  <!-- Navbar -->
+<div id="myNavbar" class="navbar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a class="active" href="index.html">Início</a>
+    <a href="#" onclick="fmsg()">Preces</a>
+</div>
+   
+    <section class="content">
+
+        <article class="artigo">
+            <h3 id="idsalmos">Salmos</h3>
+            <a href="meuarquivo.txt" target="_blank">aqui</a>
+            <script>
+                // URL para ler
+//let url = 'https://raw.githubusercontent.com/px-ao/px-ao.github.io/main/';
+var fs = require('fs');
+var dados = 'Hello, world!';
+var caminho = './helloworld.txt';
+fs.writeFile(caminho, dados, 'utf8', function (erro) {
+  if (erro) {
+    console.error('Erro ao escrever o arquivo:', erro);
+  } else {
+    console.log('Arquivo salvo com sucesso!');
+  }
+});
+
+            </script>
+            
+    </article>
+       
+</section>
+
+</body>
+
+</html>
