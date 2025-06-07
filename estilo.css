@@ -210,6 +210,17 @@ main {
     padding: 16px 57px 0px 57px;
 }
 
+.mensagemTreho_j_n{
+    margin-top: 34px;
+    width: 100%;
+    display: block;
+   
+    font-size: 17px;
+    text-align: justify;
+    margin: 0px 16px 10px 16px; 
+    background-color: transparent;
+    padding: 16px 57px 0px 57px;
+}
 .artigo h3 {
     color: var(--verm-geral);
     margin-top: 16px;
