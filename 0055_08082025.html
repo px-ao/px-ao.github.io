@@ -11,6 +11,30 @@
     <link rel="stylesheet" href="estilo.css">
     <script src="meujs.js"></script>
 
+    <style>
+    :root{--bg:#f7f9fb;--card:#ffffff;--accent:#2b6cb0;--muted:#6b7280}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);margin:0;padding:32px;color:#111}
+    .wrap{max-width:980px;margin:0 auto}
+    header{margin-bottom:18px}
+    h1{font-size:20px;margin:0 0 6px;color:var(--accent)}
+    p.lead{margin:0;color:var(--muted)}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 22px rgba(15,23,42,0.06)}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    thead th{background:linear-gradient(90deg,rgba(43,108,176,0.08),rgba(43,108,176,0.02));text-align:left;padding:12px;font-size:14px;color:var(--accent)}
+    tbody td{padding:12px;border-top:1px solid #eef2f6;vertical-align:top}
+    tbody tr:nth-child(odd){background:transparent}
+    
+
+    .small{font-size:13px;color:var(--muted)}
+    @media (max-width:640px){
+      thead{display:none}
+      table,tbody,tbody tr,tbody td{display:block;width:100%}
+      tbody td{box-sizing:border-box;padding:10px 12px}
+      tbody td:before{content:attr(data-label);display:block;font-weight:600;margin-bottom:6px;color:var(--accent)}
+         [id^="t"]{background-color:#cbcccc}
+    }
+  </style>
+
 </head>
 
 
@@ -48,7 +72,8 @@
             </h3>
             <p class='prece'>Bom Jesus, aqui estou, acolhe-me com Teu Santo abraço dulcíssimo.</p>
             <p class='Deus'>Meu Coração está descansando em ti, e isso te leva a um verdadeiro e profundo descanso,
-                apesar, de no início parecer que sorves um pouco das dores da Minha coroa de espinhos, dores trazidas
+                apesar, de no início parecer que sorves um pouco das dores<a onclick="fmostraMsg(document.getElementById('ancora1').innerHTML)"><sup id="volta1"
+                        class="nota">[1]</sup></a> da Minha coroa de espinhos, dores trazidas
                 pela ingratidão do gênero Humano, e com que agridem o Meu Santo e Dulcíssimo Coração. Quero
                 fortificar-te com a ciência da imensa graça que é estar nas Minhas Santas chagas, chagas que são portas
                 do Céu a todas as necessidades da Minha Igreja e de toda a Humanidade. Ensino-te o amor puro e sem temor
@@ -121,7 +146,7 @@
                 doa-te as coisas, Sou Eu, por seres alma esposa, por Mim sustentada.</p>
 
             <span class="ornamento"><img src="borda1.png" alt="Santa Cruz Ornada" /></span>
-           <!--  <div class="boxmsg" id="idboxmsg">
+           <div class="boxmsg" id="idboxmsg">
                 <span id="fechaMsg" class="closebtn"
                     onclick="closeBoxMsg(document.querySelector('#idboxmsg'))">&times;</span>
                 <div id="idMsg"></div>
@@ -129,11 +154,68 @@
             <span id="nR">Notas de Rodapé:</span>
             <div class="rodape">
                 <p id="ancora1">
-                    1. 
+                    1. A dor vista pela ciência e pela teologia Cristocêntrica. Para a Igreja Fé e Ciência andam juntas.
+                     <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th id="t">Aspecto</th>
+            <th>Neurociência</th>
+            <th>Teologia Católica e Patrística</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Aspecto" id='t1' >Origem</td>
+            <td data-label="Neurociência">Resultado da ativação dos <strong>nociceptores</strong> e processamento no <strong>sistema nervoso central</strong>; pode ser física ou psicológica.</td>
+            <td data-label="Teologia">Consequência do <em>pecado original</em> e parte da condição humana após a queda (Gn 3,16-19).</td>
+          </tr>
+
+          <tr>
+            <td data-label="Aspecto" id='t2' >Função</td>
+            <td data-label="Neurociência">Mecanismo de <strong>alerta e proteção</strong> contra danos, ou sinal de disfunção crônica do sistema nervoso.</td>
+            <td data-label="Teologia">Pode ser <strong>provação</strong>, <strong>purificação</strong> ou <strong>participação nos sofrimentos de Cristo</strong> (Cl 1,24).</td>
+          </tr>
+
+          <tr>
+            <td data-label="Aspecto" id='t3' >Modulação</td>
+            <td data-label="Neurociência">É influenciada por <strong>emoções, atenção, memória e significado atribuído</strong>; placebo e fé alteram a percepção da dor.</td>
+            <td data-label="Teologia">Atribuir sentido cristão (redenção, amor, oferta a Deus) <strong>modifica a experiência subjetiva</strong> e dá força espiritual.</td>
+          </tr>
+
+          <tr>
+            <td data-label="Aspecto" id='t3' >Tipos</td>
+            <td data-label="Neurociência"><strong>Aguda</strong> (temporária, ligada a lesão) e <strong>crônica</strong> (sensibilização do sistema nervoso).</td>
+        <td data-label="Teologia"><strong>Temporal</strong> (nesta vida, com valor de purificação e manter a esperança de trará-la para paz não apenas imaterial, mas temporal e corporal); cuidar do corpo com devido amor, pois é templo de Deus; e <strong>escatológica</strong> (dor que tratemos sua causa no tempo atual, e a vivendo com fé em Cristo pode ser vista, também, aprofundamento interior para a vida eterna, por isso não deixar que seja motivo de desespero; cuidar do corpo com devido amor, pois é templo de Deus — Ap 21,4).</td>
+          </tr>
+
+          <tr>
+            <td data-label="Aspecto" id='t4' >Alívio</td>
+            <td data-label="Neurociência">Medicamentos, fisioterapia, psicoterapia, técnicas de relaxamento e atenção plena.</td>
+            <td data-label="Teologia">Oração, sacramentos, contemplação da Cruz, virtudes (paciência, esperança) e caridade.</td>
+          </tr>
+
+          <tr>
+            <td data-label="Aspecto" id='t5' >Meta final</td>
+            <td data-label="Neurociência">Restaurar a função e o bem-estar físico/psicológico.</td>
+            <td data-label="Teologia"><strong>Unir-se a Cristo</strong>, crescer na santidade e alcançar a vida eterna.</td>
+          </tr>
+
+          <tr>
+            <td data-label="Aspecto" id='t6' >Frase-chave</td>
+            <td data-label="Neurociência">“A dor é modulada pelo cérebro e pelo significado que damos a ela.”</td>
+            <td data-label="Teologia">“A dor, unida a Cristo, torna-se caminho de redenção e esperança.”</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="small" style="margin-top:14px">Quadro Gerado por IA e conferido por humano.</p>
+    </div>
+                    
                 </p>
 
 
-            </div> -->
+            </div> 
         </article>
     </section>
 
