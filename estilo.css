@@ -125,13 +125,15 @@ main {
 
 }
 .content {
-    display: block;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; 
     margin: 0 auto;  
     background-color: white;
     top: 160px;
     font-family: 'Playfair Display', serif;
     font-size: 1rem;
-    width: 84%;
+    width: 99%;
    
 }
 
@@ -433,15 +435,18 @@ dialog {
   
   /* Ícone do menu */
   .icon {
+    position: absolute;
+   left: 7px;
+    z-index: 999;
     cursor: pointer;
     background-color: #ecad19;
     width: 30px;
     margin-bottom: 12px;
-    left: 3px;
+    
     top: 160px;
     padding: 7px;
     color: #0d6872;
-    z-index: 13;
+ 
     border: rgb(238, 238, 73) 1px solid;
     border-radius: 7px;
     border-style:outset;
@@ -610,6 +615,10 @@ dialog {
   }
 
 @media  screen and (max-width : 700px)  {
+    html {
+    font-size: 1rem;
+
+}
     .header #idtitulo{
         position:absolute;
         top: 15px;
@@ -656,7 +665,7 @@ dialog {
     }
 
     .artigo {
-        width: 93%;
+        width: 100;
         margin: 0 auto;
     }
 
@@ -697,12 +706,13 @@ dialog {
     }
 
  .icon {
-    float: left;
-    /* margin-top: 160px; */
+    /* float: left; */
+    position: absolute;
+   left: 3px;
+    z-index: 999;
     padding: 5.2px;
     /* width: 30px; */
-    
-    z-index: 999;
+     
 
     
  }
@@ -740,4 +750,33 @@ dialog {
 .tablink {
     width: 33.3%;
 }
+
 }
+
+/* Centraliza o artigo, ornamento e imagemjesus horizontalmente */
+.content {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+/* Garante que o artigo esteja centralizado */
+.artigo {
+    width: 100%; /* Mantém a largura definida */
+    margin: 0 auto; /* Centraliza caso necessário */
+}
+
+/* Centraliza o ornamento */
+.ornamento {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0; /* Adiciona espaçamento vertical */
+}
+
+/* Centraliza a imagemjesus */
+.imagemjesus {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0; /* Adiciona espaçamento vertical */
+}
+
