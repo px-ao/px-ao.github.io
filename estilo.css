@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alef&display=swap');
+
 
 :root {
     --verm-geral: #c1272d;
@@ -131,7 +133,7 @@ main {
     margin: 0 auto;  
     background-color: white;
     top: 160px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Alef', 'Playfair Display', serif;
      width: 81%;
    
 }
@@ -144,6 +146,7 @@ main {
     width: 95%;
 }
 .artigo p {
+    font-family: 'Alef', sans-serif;
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: justify;
@@ -160,7 +163,7 @@ main {
    /*  font-size: 17px; */
 }
 .Deus {
-    font-weight: bold;
+    font-weight:normal;
     /* font-size: 17px; */
 }
 
@@ -233,7 +236,7 @@ main {
     padding: 16px 57px 0px 57px;
 }
 .artigo h3 {
-    color: var(--verm-geral);
+    color:  #d4bc03;
     margin-top: 16px;
     margin-bottom: 2px;
     padding: 3px;
