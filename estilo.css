@@ -163,7 +163,7 @@ main {
    /*  font-size: 17px; */
 }
 .Deus {
-    font-weight:normal;
+    font-weight: bold;
     /* font-size: 17px; */
 }
 
@@ -615,6 +615,12 @@ dialog {
     height: 100%;
    
   }
+   @media print {
+            .imagemjesus.pagina-inicial,
+            .ornamento.imagem-ornamento {
+                display: none !important;
+            }
+        }
 
 @media  screen and (max-width : 700px)  {
     html {
@@ -755,6 +761,7 @@ dialog {
 
 }
 
+
 /* Centraliza o artigo, ornamento e imagemjesus horizontalmente */
 .content {
     display: flex;
@@ -780,5 +787,78 @@ dialog {
     display: flex;
     justify-content: center;
     margin: 20px 0; /* Adiciona espaçamento vertical */
+}
+
+#printLink {
+    color: blue; /* Ou a cor que desejar para o link */
+    cursor: pointer;
+    text-decoration: underline;
+    pointer-events: auto; /* ESSA É A LINHA MAIS IMPORTANTE */
+}
+
+/* Estilos para o card de impressão */
+#printCard {
+    /* Oculto por padrão, controlado via JavaScript */
+    display: none; 
+    
+    /* Posicionamento e centralização */
+    position: fixed; /* Fica fixo na tela mesmo com rolagem */
+    z-index: 1001; /* Garante que fique acima de outros conteúdos */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* O truque para centralização perfeita */
+
+    /* Dimensões */
+    width: 86%;
+    max-height: 900px;
+    height: 90vh; /* Ocupa 90% da altura da tela */
+    
+    /* Aparência de card */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    
+    /* Conteúdo interno */
+    padding: 20px;
+    overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for maior que o card */
+}
+
+/* Estilo para o botão de fechar dentro do card */
+#printCard .closebtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+}
+
+/* Estilo para o botão de imprimir dentro do card */
+#printCard #printButton {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #98e5e7;
+    padding: 2px 5px 2px 5px;
+}
+
+/* Ajusta o conteúdo para não ficar sob os botões */
+#printCard #printContent {
+    margin-top: 40px;
+}
+
+/* 
+  Garante que nenhum texto dentro do card de impressão esteja em negrito,
+  sobrescrevendo regras como a da classe .Deus ou tags <b>/<strong>.
+*/
+#printCard .Deus,
+#printCard b,
+#printCard h3,
+#printCard strong,
+#printCard .negrito {
+    font-weight: normal;
 }
 
