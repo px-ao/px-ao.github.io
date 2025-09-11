@@ -371,7 +371,7 @@ background-color:#fa9194;
         position: -webkit-sticky; /* Safari */
         position: sticky;
         bottom: 0;
-        max-height: 200px;
+        max-height: 400px;
         min-height: 0; /* Adicione esta linha */
         background-color: rgb(54, 54, 54);
         border: 2px solid #545554;
