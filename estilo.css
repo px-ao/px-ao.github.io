@@ -862,3 +862,24 @@ dialog {
     font-weight: normal;
 }
 
+.year-toggle h3,
+.month-toggle h4 {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.message-item {
+    padding-left: 25px; /* Aumenta o recuo para dar espaço ao ícone */
+    position: relative; /* Necessário para posicionar o pseudo-elemento */
+}
+
+.message-item::before {
+    content: '📄'; /* O emoji de documento */
+    position: absolute; /* Posição absoluta em relação ao .message-item */
+    left: 0; /* Alinha o ícone à esquerda */
+    top: 0; /* Alinha o ícone ao topo */
+}
+

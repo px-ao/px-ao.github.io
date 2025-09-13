@@ -48,6 +48,10 @@ function fnavega() {
     // O último elemento do array é o nome do arquivo
     const nomeDoArquivo = partesDoCaminho[partesDoCaminho.length - 1];
 
+    // Chama a função para configurar o acordeão
+    if (nomeDoArquivo === 'mensagem.html') {
+        setupAccordion();
+    }
 }
 
 
@@ -274,7 +278,39 @@ function printCardContent() {
     printWindow.print();
 }
 
+function setupAccordion() {
+    // Adiciona funcionalidade de toggle para anos
+    const yearToggles = document.querySelectorAll('.year-toggle');
+    yearToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const content = toggle.nextElementSibling;
+            content.classList.toggle('hidden');
+        });
+    });
+
+    // Adiciona funcionalidade de toggle para meses
+    const monthToggles = document.querySelectorAll('.month-toggle');
+    monthToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const content = toggle.nextElementSibling;
+            content.classList.toggle('hidden');
+        });
+    });
+
+    // Esconde todos os conteúdos de ano e mês inicialmente
+    const allYearContent = document.querySelectorAll('.year-content');
+    allYearContent.forEach(content => {
+        content.classList.add('hidden');
+    });
+
+    const allMonthContent = document.querySelectorAll('.month-content');
+    allMonthContent.forEach(content => {
+        content.classList.add('hidden');
+    });
+}
+
 // Garante que o código seja executado após o carregamento do DOM
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM fully loaded and parsed');
+    setupAccordion();
 });
