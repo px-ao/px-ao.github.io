@@ -13,16 +13,7 @@ function fnavega() {
  </div>
  
    
-        <a id="printLink" onclick="openPrintCard()">Versão para impressão</a>
-
-
-        <div id="printCard">
-            <span class="closebtn" onclick="closePrintCard()">&#10006;</span>
-            <a id="printButton" onclick="printCardContent()">IMPRIMIR &#128438;</a>
-            <div class="content" id="printContent"></div>
-            <!-- Link para imprimir -->
-
-        </div>
+       
  `
 
 
@@ -202,80 +193,7 @@ function fbiblia() {
     document.location.href = "/bibliajerusalem/";
 
 }
-// Código para o card de impressão
-// Função para abrir o card
-function openPrintCard() {
-    alert ("Atenção: Para imprimir, utilize o botão IMPRIMIR dentro do card que será aberto. Evite usar o comando de impressão do navegador, pois pode não formatar corretamente o conteúdo.");
-    const printCard = document.getElementById('printCard');
-    const printContent = document.getElementById('printContent');
-    
-    // Clona o nó da seção de conteúdo para não alterar o original
-    const contentClone = document.querySelector('.content').cloneNode(true);
 
-    // Remove os elementos indesejados do clone
-    const linkToRemove = contentClone.querySelector('#printLink');
-    if (linkToRemove) {
-        linkToRemove.remove();
-    }
-
-    const jesusImageToRemove = contentClone.querySelector('.imagemjesus');
-    if (jesusImageToRemove) {
-        jesusImageToRemove.remove();
-    }
-    const navmensToRemove = contentClone.querySelector('#navmens');
-    if (navmensToRemove) {
-        navmensToRemove.remove();
-    }
-    
-
-    const ornamentosToRemove = contentClone.querySelectorAll('.ornamento');
-    ornamentosToRemove.forEach(el => el.remove());
-
-    // Remove o próprio card de impressão do conteúdo clonado para evitar um loop infinito
-    const printCardInClone = contentClone.querySelector('#printCard');
-    if (printCardInClone) {
-        printCardInClone.remove();
-    }
-
-    // Pega o HTML limpo do clone
-    const sectionContent = contentClone.innerHTML;
-
-    printContent.innerHTML = sectionContent; // Copia o conteúdo limpo da seção para o card
-    printCard.style.display = 'block'; // Exibe o card
-}
-
-// Função para fechar o card
-function closePrintCard() {
-    const printCard = document.getElementById('printCard');
-    printCard.style.display = 'none'; // Oculta o card
-}
-
-// Função para imprimir o conteúdo do card
-function printCardContent() {
-    const printContent = document.getElementById('printContent').innerHTML;
-    const printWindow = window.open('', '_blank');
-    printWindow.document.write(`
-        <html>
-            <head>
-                <title>Impressão</title>
-                <style>
-                    body {
-                        font-family: sans-serif;
-                    }
-                    p.Deus {
-                        font-weight: normal;
-                    }
-                    p.prece {
-                        font-style: italic;
-                    }
-                </style>
-            </head>
-            <body>${printContent}</body>
-        </html>
-    `);
-    printWindow.document.close();
-    printWindow.print();
-}
 
 function setupAccordion() {
     // Adiciona funcionalidade de toggle para anos
