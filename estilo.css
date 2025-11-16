@@ -607,18 +607,20 @@ dialog {
   }
   
   /* Estilize o conteúdo das abas (e defina a altura) */
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    width: 81%;
-    background-color: white;
-    font-family: 'Playfair Display', serif;
-    min-height: 100vh;
-}
-
+  .tabcontent {
+    color: white;
+    display: none;
+    padding: 12px 20px;
+    border-top: none;
+    height: 100%;
+   
+  }
+   @media print {
+            .imagemjesus.pagina-inicial,
+            .ornamento.imagem-ornamento {
+                display: none !important;
+            }
+        }
 
 @media  screen and (max-width : 700px)  {
     html {
@@ -626,17 +628,12 @@ dialog {
 
 }
     .header #idtitulo{
-        position: relative;
+        position:absolute;
         top: 15px;
-        left: 0;
-        right: 0;
-        float: none;
-        margin: 0 auto;
         font-size: 1.11rem;
+        float:left;
+        left: 182px;
         z-index: 9999;
-        text-align: center;
-        width: 100%;
-        display: block;
     }
     #fundoimg {
         float:left;
@@ -885,3 +882,30 @@ dialog {
     left: 0; /* Alinha o ícone à esquerda */
     top: 0; /* Alinha o ícone ao topo */
 }
+
+.card-mensagem {
+    background-color: #f5f5f5;
+    border-left: 5px solid #af2114;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mensagem-destaque {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #333;
+    margin: 0;
+    font-style: italic;
+}
+
+.data-mensagem {
+    font-size: 0.95rem;
+    text-align: center;
+    color: #666;
+    margin: 10px 0 0 0;
+    font-style: italic;
+}
+
