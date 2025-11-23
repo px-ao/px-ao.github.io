@@ -86,10 +86,12 @@ function fmensagens(valsoma) {
         "0036_25012025.html","0037_10022025.html","0038_05032025.html","0039_09032025.html","0040_24032025.html","0041_06042025.html",
         "0043_01052025.html","0044_06062025.html","0045_13062025.html","0046_17062025.html",
         "0058_23082025.html","0062_03092025.html","0061_12092025.html","0064_26102025.html","0065_01112025.html","0067_04112025.html",
-        "0068_07112025.html","0069_15112025.html","0070_17112025.html","0071_20112025.html"]
-    let pos = vmens.indexOf(page);
-    //alert("posição:" + pos)
-
+        "0068_07112025.html","0069_15112025.html","0070_17112025.html","0071_20112025.html","0072_23112025.html"]
+ 
+ 
+        //--setas de navegação
+ 
+        let pos = vmens.indexOf(page);
     if (valsoma == 1 && pos == vmens.length - 1) {
 
         numeropage = 0
