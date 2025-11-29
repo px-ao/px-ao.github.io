@@ -628,11 +628,13 @@ dialog {
 
 }
     .header #idtitulo{
-        position:absolute;
+        position: absolute;
         top: 15px;
         font-size: 1.11rem;
-        float:left;
-        left: 182px;
+        /* centraliza no viewport em vez de float/left fixo */
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
         z-index: 9999;
     }
     #fundoimg {
@@ -673,7 +675,7 @@ dialog {
     }
 
     .artigo {
-        width: 100;
+        width: 100%; /* corrigido: faltava % */
         margin: 0 auto;
     }
 
@@ -907,5 +909,12 @@ dialog {
     color: #666;
     margin: 10px 0 0 0;
     font-style: italic;
+}
+
+.triangulo {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* centraliza horizontalmente */
 }
 
