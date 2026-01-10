@@ -55,7 +55,7 @@ html {
    
 }
 #fundoimg img{
-    width: 73%; 
+    width: 75%; 
     height: auto;
     background-color: #ffffff;
 
@@ -122,49 +122,49 @@ main {
     border: 2px solid #6f6f6d;
     cursor: pointer;
 }
-.linkMensagem{
-    color:black;    
-
-}
-.content {
+.month-toggle {
+    position: relative;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; 
-    margin: 0 auto;  
-    background-color: white;
-    top: 160px;
-    font-family: 'Playfair Display', serif;
-     width: 81%;
-   
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 48px 14px 18px;
+    margin: 18px 0 8px;
+    border-radius: 999px;
+    background: linear-gradient(145deg, #ffffff, #f8f2ec);
+    color: #af2114;
+    cursor: pointer;
+    border: 1px solid rgba(175, 33, 20, 0.18);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+.month-toggle::after {
+    content: "";
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #af2114;
+    border-bottom: 2px solid #af2114;
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 0.25s ease;
 }
 
-.artigo{
-    margin: 0 auto;
-    /* margin: 0px 16px 10px 16px; */
-    background-color: white;
-    padding: 0px 5px 0px 5px;
-    width: 95%;
-}
-.artigo p {
-     font-family: 'Playfair Display', serif;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: justify;
-   
 
-
-}
  .artigo h4{
     color:#38a28f;
     margin-top: 16px;
  }
 .prece {
     font-style: italic;
-   /*  font-size: 17px; */
+    color: #333333;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
 }
 .Deus {
-    font-weight: bold;
-    /* font-size: 17px; */
+    font-weight: 600;
+    color: #424040;
+    letter-spacing: 0.01em;
 }
 
 .negrito{
@@ -236,10 +236,14 @@ main {
     padding: 16px 57px 0px 57px;
 }
 .artigo h3 {
-    color:  #af2114;
+    color: #c38b0e;
     margin-top: 16px;
-    margin-bottom: 2px;
-    padding: 3px;
+    margin-bottom: 8px;
+    padding: 4px 0;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    
+    display: inline-block;
 }
 
 .nota {
@@ -316,7 +320,11 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: 7px;
-    padding: 5.2px;
+    padding-bottom: 5.2px;
+}
+.ornamento img{
+    width: 100%;
+    height: auto;
 }
 #navmens{
     display: flex;
@@ -325,35 +333,35 @@ main {
 #idseguirm, #idvoltarm{
     display: block;
     padding: 3px;
-    color: #c1272d;
+    color: #edcb85;
    margin: 0 16px;
    
 }
 #idindicem {
     display: block;
     padding: 4px;
-    background-color:#c1272d;
-    color: white;
+    background-color:#edcb85;
+    color: rgb(244, 242, 238);
 }
 #idseguirm:hover{
     cursor: pointer;
-color: #fa9194;
+color: rgb(238, 213, 159);
 
 } 
 #idvoltarm:hover{
     cursor: pointer;
-    color:#fa9194; 
+    color:rgb(238, 213, 159);
 }
 #idindicem:hover {
 cursor: pointer;
-color:#6e1400;
-background-color:#fa9194;
+color:#7d5634;
+background-color:rgb(238, 213, 159);
 }
 .a_estilo1{
     display: flex;
     justify-content: center;
     align-items: center;
-    color:#6e1400;
+    color:#605230;
 }
 .imagemjesus {
     display: flex;
@@ -386,7 +394,7 @@ background-color:#fa9194;
     
 
 dialog {
-    border-color: #c1272d;
+    border-color: #6d532e;
 }
 
 .close {
@@ -675,14 +683,18 @@ dialog {
     }
 
     .artigo {
-        width: 100%; /* corrigido: faltava % */
+        width: 100%;
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .artigo p {
-
-        word-wrap: break-word;
+    .artigo > * {
+        width: 100%;
     }
+
+    
 
     .menuOculto {
         content: '&#9776;';
@@ -761,6 +773,42 @@ dialog {
     width: 33.3%;
 }
 
+    .custom-select {
+        width: 100%;
+    }
+
+    .year-block {
+        padding: 16px;
+    }
+
+    .year-selector label {
+        font-size: 0.9rem;
+    }
+
+    .month-toggle {
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 24px;
+        padding: 12px 16px;
+    }
+
+    .month-toggle::after {
+        right: 18px;
+    }
+
+    .month-content {
+        margin-left: 0;
+        border-radius: 0 18px 18px 18px;
+    }
+
+    .message-item::before {
+        left: -10px;
+    }
+
+    .linkMensagem {
+        padding: 14px 36px 14px 16px;
+    }
+
 }
 
 
@@ -773,8 +821,27 @@ dialog {
 
 /* Garante que o artigo esteja centralizado */
 .artigo {
-    width: 100%; /* Mantém a largura definida */
-    margin: 0 auto; /* Centraliza caso necessário */
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artigo > * {
+    width: 100%;
+}
+
+.artigo > .ornamento {
+    width: auto;
+    max-width: 260px;
+}
+
+.artigo > .ornamento img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
 }
 
 /* Centraliza o ornamento */
@@ -863,10 +930,58 @@ dialog {
 #printCard .negrito {
     font-weight: normal;
 }
+.artigo p {
+        word-wrap: break-word;
+        margin-bottom:8px ;
+    }
+.month-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 48px 14px 18px;
+    margin: 18px 0 8px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, #794806, #fdd9b7);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
 
-.year-toggle h3,
+.month-toggle::after {
+    content: "";
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 0.25s ease;
+}
+
+.month-toggle.open::after {
+    transform: translateY(-50%) rotate(-135deg);
+}
+
 .month-toggle h4 {
     cursor: pointer;
+    margin: 0;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: inherit;
+}
+
+.month-content {
+    background: rgba(255, 250, 244, 0.95);
+    border-left: 3px solid #533202;
+    margin: 0 0 14px 8px;
+    padding: 16px 20px 6px;
+    border-radius: 0 22px 22px 22px;
+    box-shadow: 0 18px 32px rgba(86, 57, 3, 0.712);
 }
 
 .hidden {
@@ -874,15 +989,116 @@ dialog {
 }
 
 .message-item {
-    padding-left: 25px; /* Aumenta o recuo para dar espaço ao ícone */
-    position: relative; /* Necessário para posicionar o pseudo-elemento */
+    position: relative;
+    margin: 14px 0;
+    padding-left: 0;
 }
 
-.message-item::before {
-    content: '📄'; /* O emoji de documento */
-    position: absolute; /* Posição absoluta em relação ao .message-item */
-    left: 0; /* Alinha o ícone à esquerda */
-    top: 0; /* Alinha o ícone ao topo */
+.linkMensagem {
+    position: relative;
+    display: block;
+    padding: 14px 48px 14px 18px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255, 250, 244, 0.96), rgba(255, 228, 205, 0.96));
+    border: 1px solid rgba(175, 33, 20, 0.18);
+    color: #4b1f0f;
+    text-decoration: none;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    line-height: 1.45;
+}
+
+.linkMensagem:hover,
+.linkMensagem:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.18);
+    border-color: rgba(175, 33, 20, 0.35);
+}
+
+.linkMensagem:focus-visible {
+    outline: 2px solid rgba(175, 33, 20, 0.55);
+    outline-offset: 4px;
+}
+
+.linkMensagem::after {
+    content: ">";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    color: #afa214;
+}
+
+.year-selector {
+    width: 100%;
+    text-align: center;
+    margin: 20px auto 30px;
+}
+
+.year-selector label {
+    display: block;
+    font-weight: 600;
+    color: #0d6872;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: min(360px, 100%);
+    padding: 0 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #fef9e7, #ffe1c6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.custom-select select {
+    appearance: none;
+    border: none;
+    background: transparent;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 12px 40px 12px 0;
+    color: #6e1400;
+    cursor: pointer;
+}
+
+.custom-select select:focus {
+    outline: none;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 18px;
+    pointer-events: none;
+    font-size: 0.9rem;
+    color: #af2114;
+}
+
+.years-wrapper {
+    width: 100%;
+}
+
+.year-block {
+    margin-bottom: 24px;
+    border-radius: 14px;
+    padding: 22px 28px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+}
+
+.year-heading {
+    text-align: center;
+    margin-bottom: 14px;
+    color: #af2114;
+    letter-spacing: 0.05em;
 }
 
 .card-mensagem {

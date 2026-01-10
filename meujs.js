@@ -1,3 +1,5 @@
+let accordionInitialized = false;
+
 function fnavega() {
 
     let strnav = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -199,34 +201,96 @@ function fbiblia() {
 
 
 function setupAccordion() {
-    // Adiciona funcionalidade de toggle para anos
-    const yearToggles = document.querySelectorAll('.year-toggle');
-    yearToggles.forEach(toggle => {
-        toggle.addEventListener('click', () => {
-            const content = toggle.nextElementSibling;
-            content.classList.toggle('hidden');
-        });
-    });
+    if (accordionInitialized) {
+        return;
+    }
+    accordionInitialized = true;
 
-    // Adiciona funcionalidade de toggle para meses
-    const monthToggles = document.querySelectorAll('.month-toggle');
+    const monthToggles = Array.from(document.querySelectorAll('.month-toggle'));
+    const allMonthContent = Array.from(document.querySelectorAll('.month-content'));
+    const yearBlocks = document.querySelectorAll('.year-block');
+    const yearSelect = document.getElementById('yearSelect');
+
+    const closeAllMonths = () => {
+        allMonthContent.forEach(content => content.classList.add('hidden'));
+        monthToggles.forEach(toggle => toggle.classList.remove('open'));
+    };
+
     monthToggles.forEach(toggle => {
         toggle.addEventListener('click', () => {
             const content = toggle.nextElementSibling;
-            content.classList.toggle('hidden');
+            if (!content) {
+                return;
+            }
+
+            const shouldOpen = content.classList.contains('hidden');
+            const yearContainer = toggle.closest('.year-content');
+
+            if (yearContainer) {
+                yearContainer.querySelectorAll('.month-content').forEach(section => {
+                    if (section !== content) {
+                        section.classList.add('hidden');
+                    }
+                });
+
+                yearContainer.querySelectorAll('.month-toggle').forEach(sectionToggle => {
+                    if (sectionToggle !== toggle) {
+                        sectionToggle.classList.remove('open');
+                    }
+                });
+            }
+
+            if (shouldOpen) {
+                content.classList.remove('hidden');
+                toggle.classList.add('open');
+            } else {
+                content.classList.add('hidden');
+                toggle.classList.remove('open');
+            }
         });
     });
 
-    // Esconde todos os conteúdos de ano e mês inicialmente
-    const allYearContent = document.querySelectorAll('.year-content');
-    allYearContent.forEach(content => {
-        content.classList.add('hidden');
+    closeAllMonths();
+
+    if (!yearSelect || !yearBlocks.length) {
+        return;
+    }
+
+    yearBlocks.forEach(block => {
+        block.classList.add('hidden');
+        const content = block.querySelector('.year-content');
+        if (content) {
+            content.classList.add('hidden');
+        }
     });
 
-    const allMonthContent = document.querySelectorAll('.month-content');
-    allMonthContent.forEach(content => {
-        content.classList.add('hidden');
+    const showYear = (selectedYear) => {
+        yearBlocks.forEach(block => {
+            const matches = block.dataset.year === selectedYear;
+            block.classList.toggle('hidden', !matches);
+            const content = block.querySelector('.year-content');
+            if (content) {
+                content.classList.toggle('hidden', !matches);
+            }
+        });
+    };
+
+    const defaultYear = yearSelect.dataset.defaultYear || (yearBlocks[0] ? yearBlocks[0].dataset.year : '');
+
+    yearSelect.addEventListener('change', (event) => {
+        const selectedYear = event.target.value;
+        if (!selectedYear) {
+            return;
+        }
+        showYear(selectedYear);
+        closeAllMonths();
     });
+
+    if (defaultYear) {
+        yearSelect.value = defaultYear;
+        showYear(defaultYear);
+        closeAllMonths();
+    }
 }
 
 // Garante que o código seja executado após o carregamento do DOM
