@@ -1,0 +1,1274 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap');
+
+:root {
+    --blue-900: #0f2f68;
+    --blue-700: #1b4fb0;
+    --blue-600: #2d6fe0;
+    --blue-200: #d5e4ff;
+    --pink-400: #f4b4c6;
+    --gray-50: #f6f8ff;
+    --gray-100: #eef2ff;
+    --gray-300: #d9dde6;
+    --gray-700: #4c566a;
+    --text-dark: #1f2a37;
+    --text-muted: #5f6c80;
+    --shadow-elevated: 0 25px 50px rgba(13, 28, 46, 0.12);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--gray-50);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-header {
+    background: linear-gradient(135deg, #103374, #1f5fcc);
+    color: white;
+    padding: 2rem 0 3rem;
+}
+
+nav {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.page-shell {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+}
+
+.hero {
+    padding: 3rem 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-visual {
+    position: relative;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 28px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    width: min(420px, 100%);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.hero-art {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-figure-main {
+    width: min(260px, 80vw);
+    border-radius: 32px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    border: 4px solid rgba(255, 255, 255, 0.4);
+}
+
+.hero-figure-frame {
+    position: absolute;
+    width: min(280px, 85vw);
+    opacity: 0.6;
+    mix-blend-mode: screen;
+    transform: translate(12px, 24px) rotate(4deg);
+}
+
+.brand {
+    font-family: 'Martel', serif;
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    letter-spacing: 0.08em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.brand span {
+    color: var(--pink-400);
+}
+
+.brand-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.brand-cristo {
+    color: var(--pink-400);
+    font-weight: 700;
+}
+
+.nav-toggle {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    display: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    font-weight: 500;
+}
+
+.nav-links a {
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-links a[aria-current="page"] {
+    background: white;
+    color: var(--blue-700);
+}
+
+
+.surface {
+    background: white;
+    border-radius: 32px;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    margin-top: -2.5rem;
+    position: relative;
+    box-shadow: var(--shadow-elevated);
+    background-image: url('assets/pattern.svg');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 260px;
+}
+
+.legacy-surface {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.message-pager {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+    padding: 1.25rem;
+    border-radius: 24px;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.9), rgba(213, 228, 255, 0.6));
+    border: 1px solid rgba(15, 47, 104, 0.15);
+    box-shadow: 0 20px 45px rgba(15, 47, 104, 0.12);
+}
+
+.message-pager__spacer {
+    width: 1px;
+    background: rgba(15, 47, 104, 0.15);
+}
+
+.message-pager__link {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 1rem 1.25rem;
+    border-radius: 18px;
+    border: 1px solid rgba(15, 47, 104, 0.2);
+    background: white;
+    text-decoration: none;
+    color: var(--blue-900);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.message-pager__link:hover,
+.message-pager__link:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 35px rgba(15, 47, 104, 0.18);
+}
+
+.message-pager__link--prev {
+    text-align: left;
+}
+
+.message-pager__link--next {
+    text-align: right;
+}
+
+.message-pager__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-dark);
+    text-transform: none;
+}
+
+.message-pager__arrow {
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--blue-700);
+}
+
+.message-pager__arrow--prev {
+    margin-right: 0.35rem;
+}
+
+.message-pager__arrow--next {
+    margin-left: 0.35rem;
+}
+
+.message-pager__link.is-disabled {
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.message-pager__link.is-disabled .message-pager__arrow {
+    color: var(--text-muted);
+}
+
+.legacy-scripture blockquote {
+    font-family: 'Martel', serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--blue-700);
+    background: var(--gray-100);
+    border-radius: 28px;
+    padding: 1.5rem;
+    border: 1px solid var(--gray-300);
+}
+
+.legacy-message {
+    background: linear-gradient(140deg, rgba(195, 218, 238, 0.4), rgba(249, 212, 223, 0.4));
+    border-radius: 28px;
+    padding: 1.5rem 1.75rem;
+    border: 1px solid var(--gray-300);
+}
+
+.legacy-message-card {
+    background: white;
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 15px 30px rgba(13, 28, 46, 0.12);
+    border: 1px solid var(--gray-300);
+}
+
+.legacy-message .Deus {
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+.legacy-date {
+    margin-top: 0.75rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.legacy-article h3,
+.legacy-columns h3 {
+    color: var(--blue-600);
+    margin-bottom: 0.75rem;
+}
+
+.legacy-article p,
+.legacy-columns p {
+    color: var(--text-dark);
+    text-align: justify;
+}
+
+.legacy-article p + p {
+    margin-top: 1rem;
+}
+
+.legacy-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.legacy-card {
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 20px;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-300);
+}
+
+.legacy-footer-ornament {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.legacy-footer-ornament img {
+    width: min(100px, 70%);
+    opacity: 0.85;
+}
+
+.artigo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.year-selector {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.year-selector label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue-700);
+    margin-bottom: 0.75rem;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(360px, 100%);
+    padding: 0 1.5rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(229, 239, 255, 0.95));
+    border: 1px solid rgba(15, 47, 104, 0.2);
+    box-shadow: 0 12px 32px rgba(15, 47, 104, 0.08);
+    margin: 0 auto;
+}
+
+.custom-select select {
+    appearance: none;
+    border: none;
+    background: transparent;
+    font-family: 'Martel', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--blue-900);
+    width: 100%;
+    padding: 0.85rem 2.5rem 0.85rem 0;
+    cursor: pointer;
+}
+
+.custom-select select:focus {
+    outline: none;
+}
+
+.custom-select select:focus-visible {
+    outline: 2px solid rgba(45, 111, 224, 0.5);
+    outline-offset: 4px;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 18px;
+    font-size: 0.9rem;
+    color: var(--blue-700);
+    pointer-events: none;
+}
+
+.years-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.year-block {
+    border-radius: 28px;
+    padding: 1.75rem;
+    background: white;
+    border: 1px solid rgba(15, 47, 104, 0.12);
+    box-shadow: 0 25px 45px rgba(15, 47, 104, 0.08);
+}
+
+.year-heading {
+    text-align: center;
+    margin: 0 0 1rem;
+    font-family: 'Martel', serif;
+    letter-spacing: 0.08em;
+    color: var(--blue-700);
+    text-transform: uppercase;
+}
+
+.year-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.month-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.95rem 2.75rem 0.95rem 1.2rem;
+    border-radius: 999px;
+    background: linear-gradient(130deg, var(--blue-700), var(--blue-600));
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 15px 28px rgba(15, 47, 104, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.month-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(15, 47, 104, 0.25);
+}
+
+.month-toggle::after {
+    content: '';
+    position: absolute;
+    right: 1.4rem;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 0.25s ease;
+}
+
+.month-toggle.open::after {
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.month-toggle h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.month-content {
+    background: rgba(246, 248, 255, 0.95);
+    border-left: 4px solid var(--blue-700);
+    margin: 0 0 1rem 0.6rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0 22px 22px 22px;
+    box-shadow: 0 18px 32px rgba(15, 47, 104, 0.12);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.message-item {
+    margin: 0.85rem 0;
+}
+
+.linkMensagem {
+    position: relative;
+    display: block;
+    padding: 0.85rem 2.75rem 0.85rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--blue-900);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(229, 239, 255, 0.98));
+    border: 1px solid rgba(15, 47, 104, 0.15);
+    box-shadow: 0 10px 26px rgba(15, 47, 104, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    line-height: 1.5;
+}
+
+.linkMensagem::after {
+    content: '\203A';
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--blue-700);
+}
+
+.linkMensagem:hover,
+.linkMensagem:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 32px rgba(15, 47, 104, 0.18);
+}
+
+.section-title {
+    font-family: 'Martel', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.section-lead {
+    max-width: 60ch;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.text-flow {
+    columns: 1;
+    column-gap: 2.5rem;
+    color: var(--text-dark);
+}
+
+.text-flow p + p {
+    margin-top: 1rem;
+    text-align: justify;
+}
+
+@media (min-width: 900px) {
+    .text-flow {
+        columns: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .text-flow {
+        column-gap: 1.25rem;
+    }
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--gray-100);
+    border-radius: 24px;
+    padding: 1.5rem;
+    border: 1px solid var(--gray-300);
+}
+
+.card h3 {
+    font-family: 'Martel', serif;
+    color: var(--blue-700);
+    margin-bottom: 0.8rem;
+}
+
+.featured-quote {
+    margin: 2.5rem 0;
+    padding: 1.5rem 1.8rem;
+    border-left: 4px solid var(--pink-400);
+    background: linear-gradient(120deg, rgba(243, 243, 243, 0.7), white);
+}
+
+.featured-quote p {
+    margin-bottom: 0.75rem;
+}
+
+.featured-quote .Deus,
+.featured-quote .prece {
+    font-size: 1.05rem;
+}
+
+.reading-progress {
+    height: 6px;
+    width: 100%;
+    background: var(--gray-300);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.reading-progress span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--pink-400);
+    transition: width 0.2s ease-out;
+}
+
+.timeline {
+    border-left: 2px solid var(--gray-300);
+    padding-left: 1.5rem;
+    margin-top: 2rem;
+}
+
+.timeline article {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline article::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--pink-400);
+    left: -2.1rem;
+    top: 0.4rem;
+}
+
+.timeline h4 {
+    font-family: 'Martel', serif;
+    color: var(--blue-700);
+    margin-bottom: 0.5rem;
+}
+
+.timeline small {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+}
+
+.note-box {
+    background: var(--gray-100);
+    border-radius: 18px;
+    padding: 1.25rem;
+    border: 1px solid var(--gray-300);
+}
+
+.note-box strong {
+    color: var(--blue-700);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+.liturgical-card {
+    padding: 1.3rem 1.4rem;
+    border-radius: 22px;
+    border: 1px solid var(--gray-300);
+    background: linear-gradient(140deg, white, var(--gray-100));
+}
+
+.liturgical-date {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(48, 135, 196, 0.1);
+    color: var(--blue-700);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.intentions-list {
+    margin: 2rem 0 0;
+    padding-left: 1.2rem;
+    color: var(--text-muted);
+}
+
+.intentions-list li + li {
+    margin-top: 0.5rem;
+}
+
+.psalm-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 2rem 0;
+}
+
+.psalm-tabs button {
+    border: 1px solid var(--blue-200);
+    background: white;
+    color: var(--blue-700);
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, border 0.2s ease;
+}
+
+.psalm-tabs button[aria-pressed="true"] {
+    background: var(--blue-700);
+    color: white;
+    border-color: var(--blue-700);
+}
+
+.psalm-panel {
+    display: none;
+    padding: 1.5rem;
+    border-radius: 24px;
+    border: 1px solid var(--gray-300);
+    background: white;
+}
+
+.psalm-panel.is-active {
+    display: block;
+}
+
+.psalm-panel p + p {
+    margin-top: 1rem;
+}
+
+.psalm-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.psalm-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.8rem;
+    border-radius: 999px;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-300);
+    font-size: 0.85rem;
+}
+
+.psalm-callout {
+    margin-top: 1.5rem;
+    padding: 1rem 1.2rem;
+    border-left: 4px solid var(--pink-400);
+    background: var(--gray-50);
+    color: var(--gray-700);
+}
+
+footer {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    color: var(--text-muted);
+}
+
+footer span {
+    color: var(--pink-400);
+}
+
+.pill-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(48, 135, 196, 0.12);
+    color: var(--blue-700);
+    padding: 0.2rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+}
+
+.pilgrim-grid {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+.pilgrim-grid article {
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.pilgrim-grid h5 {
+    font-family: 'Martel', serif;
+    color: var(--blue-700);
+    margin-bottom: 0.5rem;
+}
+
+.message-library {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.message-card {
+    padding: 1.4rem 1.6rem;
+    border-radius: 24px;
+    border: 1px solid var(--gray-300);
+    background: white;
+    box-shadow: 0 8px 20px rgba(13, 28, 46, 0.08);
+}
+
+.message-date {
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.devotional-section {
+    margin-top: 2.5rem;
+    padding: 1.8rem;
+    border-radius: 28px;
+    border: 1px solid var(--gray-300);
+    background: linear-gradient(120deg, rgba(195, 218, 238, 0.25), rgba(249, 212, 223, 0.25));
+}
+
+.devotional-section h4 {
+    color: var(--blue-600);
+    margin-bottom: 0.8rem;
+}
+
+.lectio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.lectio-grid article {
+    padding: 1rem 1.2rem;
+    border-radius: 18px;
+    border: 1px solid var(--gray-300);
+    background: white;
+}
+
+.prece {
+    font-family: 'Martel', serif;
+    font-style: italic;
+    color: #333333;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    font-size: 1.08rem;
+}
+
+.Deus {
+    font-family: 'Martel', serif;
+    font-weight: 600;
+    color: #424040;
+    letter-spacing: 0.01em;
+    font-size: 1.08rem;
+}
+
+sup[class*="nota"] {
+    cursor: pointer;
+    color: var(--blue-700);
+    font-weight: 700;
+    padding: 0 0.15rem;
+}
+
+sup[class*="nota"]:focus-visible {
+    outline: 2px solid rgba(45, 111, 224, 0.4);
+    border-radius: 4px;
+}
+
+.rosary-banner {
+    margin: 2rem 0;
+    padding: 1.4rem;
+    border-radius: 24px;
+    border: 1px solid var(--blue-200);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    align-items: center;
+}
+
+.rosary-banner img {
+    width: min(300px, 80%);
+    justify-self: center;
+}
+
+.prayer-collection {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.prayer-collection__intro {
+    text-align: center;
+}
+
+.prayer-collection__intro h1 {
+    font-family: 'Martel', serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin-bottom: 0.75rem;
+}
+
+.prayer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.prayer-catalog {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.prayer-catalog__intro {
+    text-align: center;
+}
+
+.catalog-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.catalog-filter label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue-700);
+}
+
+.catalog-panels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.catalog-panel {
+    border-radius: 28px;
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid rgba(15, 47, 104, 0.12);
+    box-shadow: 0 20px 35px rgba(15, 47, 104, 0.08);
+}
+
+.catalog-panel h2 {
+    font-family: 'Martel', serif;
+    letter-spacing: 0.04em;
+    margin: 0 0 1rem;
+    color: var(--blue-700);
+}
+
+.prayer-option-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.prayer-option {
+    width: 100%;
+    border: 1px solid rgba(15, 47, 104, 0.18);
+    background: rgba(246, 248, 255, 0.85);
+    color: var(--blue-900);
+    border-radius: 20px;
+    padding: 0.85rem 1.1rem;
+    text-align: left;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.prayer-option:hover,
+.prayer-option:focus-visible {
+    transform: translateX(4px);
+    box-shadow: 0 12px 24px rgba(15, 47, 104, 0.15);
+}
+
+.prayer-option.is-active {
+    background: linear-gradient(135deg, var(--blue-700), var(--blue-600));
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 18px 32px rgba(15, 47, 104, 0.25);
+}
+
+.prayer-display {
+    position: sticky;
+    top: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: min(640px, 100%);
+    border-radius: 28px;
+    padding: 1.75rem;
+    background: white;
+    border: 1px solid rgba(15, 47, 104, 0.18);
+    box-shadow: 0 30px 60px rgba(15, 47, 104, 0.18);
+    z-index: 5;
+    scroll-margin-top: 1.5rem;
+}
+
+.prayer-display__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.prayer-display__footer {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.prayer-back {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--blue-700);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.prayer-back:hover,
+.prayer-back:focus-visible {
+    color: var(--blue-900);
+    transform: translateY(-1px);
+}
+
+.prayer-display h2 {
+    font-family: 'Martel', serif;
+    margin-top: 0.4rem;
+}
+
+.prayer-display .prayer-body {
+    margin-top: 1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.prayer-display .prayer-body p + p {
+    margin-top: 1rem;
+}
+
+.prayer-sources {
+    display: none;
+}
+
+.prayer-block {
+    background: white;
+    border-radius: 28px;
+    padding: 1.5rem 1.75rem;
+    border: 1px solid var(--gray-300);
+    box-shadow: 0 12px 30px rgba(15, 47, 104, 0.08);
+}
+
+.prayer-block h2 {
+    font-family: 'Martel', serif;
+    color: var(--blue-700);
+    margin-top: 0;
+}
+
+.prayer-body p {
+    text-align: justify;
+    color: var(--text-dark);
+}
+
+.prayer-body p + p {
+    margin-top: 1rem;
+}
+
+.tab-hint {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.footnote-overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 1rem 1rem;
+    pointer-events: none;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 40;
+}
+
+.footnote-overlay.is-active {
+    pointer-events: auto;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.footnote-overlay__inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px 24px 18px 18px;
+    padding: 1.25rem 1.5rem 2rem;
+    box-shadow: 0 -18px 40px rgba(15, 47, 104, 0.2);
+    border: 1px solid var(--gray-300);
+}
+
+.footnote-overlay__close {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    line-height: 1;
+}
+
+.footnote-overlay__close:hover,
+.footnote-overlay__close:focus-visible {
+    color: var(--blue-700);
+}
+
+.footnote-overlay__inner {
+    position: relative;
+}
+
+.footnote-overlay__content {
+    color: var(--text-dark);
+    line-height: 1.6;
+    max-height: 35vh;
+    overflow-y: auto;
+    padding-top: 0.5rem;
+}
+
+@media (max-width: 800px) {
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 74px;
+        right: 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        background: rgba(13, 28, 46, 0.95);
+        padding: 1rem 1.2rem;
+        border-radius: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        width: min(300px, 85vw);
+        transform-origin: top right;
+        transform: scaleY(0);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .nav-links[data-open="true"] {
+        transform: scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    nav {
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .surface {
+        margin-top: -1.5rem;
+    }
+
+    .message-pager {
+        flex-direction: column;
+    }
+
+    .message-pager__spacer {
+        display: none;
+    }
+
+    .message-pager__link--next {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0 1rem;
+    }
+
+    .hero {
+        padding: 1.5rem 1rem 0;
+        justify-content: center;
+    }
+
+    .hero-visual {
+        width: min(280px, 92vw);
+        padding: 0.9rem;
+    }
+
+    .hero-figure-main {
+        width: min(165px, 60vw);
+    }
+
+    .hero-figure-frame {
+        width: min(184px, 68vw);
+        transform: translate(-4px, 10px) rotate(0.5deg);
+    }
+
+    .custom-select {
+        width: 100%;
+    }
+
+    .year-block {
+        padding: 1.25rem;
+    }
+
+    .month-content {
+        margin-left: 0;
+    }
+
+    .surface {
+        border-radius: 20px;
+        padding: 1.25rem;
+    }
+
+    .calendar-grid,
+    .card-grid,
+    .lectio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rosary-banner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .prayer-display {
+        position: static;
+        width: 100%;
+        box-shadow: 0 18px 36px rgba(15, 47, 104, 0.12);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

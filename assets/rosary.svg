@@ -1,0 +1,14 @@
+<svg width="320" height="120" viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rosário estilizado">
+  <defs>
+    <linearGradient id="beadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c3daee" />
+      <stop offset="100%" stop-color="#f0a3bd" />
+    </linearGradient>
+  </defs>
+  <path d="M30 60c20-35 60-50 110-50s90 15 110 50-20 50-110 50S10 95 30 60z" fill="none" stroke="url(#beadGradient)" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 12" />
+  <circle cx="110" cy="30" r="6" fill="#1d4c7c" />
+  <circle cx="180" cy="26" r="7" fill="#3087c4" />
+  <circle cx="230" cy="42" r="5" fill="#f0a3bd" />
+  <path d="M160 96v16" stroke="#1d4c7c" stroke-width="5" stroke-linecap="round" />
+  <path d="M152 110h16" stroke="#f0a3bd" stroke-width="5" stroke-linecap="round" />
+</svg>
