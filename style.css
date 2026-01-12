@@ -165,8 +165,8 @@ nav {
 }
 
 .brand-icon {
-    width: clamp(32px, 7vw, 40px);
-    height: clamp(32px, 7vw, 40px);
+    width: 61px;
+    height: 61px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid rgba(255, 255, 255, 0.5);
