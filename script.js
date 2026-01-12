@@ -61,6 +61,23 @@ if (navToggle && navLinks) {
         navLinks.dataset.open = (!isOpen).toString();
         navToggle.setAttribute('aria-expanded', (!isOpen).toString());
     });
+    
+    // Fechar menu ao clicar fora
+    document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.dataset.open = 'false';
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+    
+    // Fechar menu ao clicar em um link
+    const navLinkItems = navLinks.querySelectorAll('a');
+    navLinkItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.dataset.open = 'false';
+            navToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
 }
 
 const progressBar = document.querySelector('[data-progress-bar]');

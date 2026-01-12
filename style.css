@@ -23,6 +23,7 @@
 
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -31,6 +32,25 @@ body {
     background: var(--gray-50);
     color: var(--text-dark);
     overflow-x: hidden;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animação suave para entrada de conteúdo */
+.surface {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 img {
@@ -41,6 +61,27 @@ img {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: clamp(1.75rem, 4.5vw, 2.2rem);
+    font-family: 'Martel', serif;
+}
+
+h2 {
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+}
+
+h3 {
+    font-size: clamp(1.15rem, 2.8vw, 1.4rem);
+}
+
+h4 {
+    font-size: clamp(1rem, 2.3vw, 1.2rem);
 }
 
 .site-header {
@@ -62,7 +103,7 @@ nav {
 }
 
 .page-shell {
-    max-width: 1040px;
+    max-width: 1044px;
     margin: 0 auto;
     padding: 0 1.5rem 4rem;
 }
@@ -77,11 +118,11 @@ nav {
     position: relative;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 28px;
-    padding: 1.5rem;
+    border-radius: clamp(18px, 4vw, 28px);
+    padding: clamp(1rem, 3vw, 1.5rem);
     text-align: center;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-    width: min(420px, 100%);
+    width: min(420px, 92%);
     margin: 0 auto;
     overflow: hidden;
 }
@@ -94,10 +135,11 @@ nav {
 }
 
 .hero-figure-main {
-    width: min(260px, 80vw);
-    border-radius: 32px;
+    width: min(260px, 70vw);
+    border-radius: clamp(20px, 4vw, 32px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-    border: 4px solid rgba(255, 255, 255, 0.4);
+    border: clamp(2px, 0.5vw, 4px) solid rgba(255, 255, 255, 0.4);
+    margin: 0 auto;
 }
 
 .hero-figure-frame {
@@ -110,11 +152,12 @@ nav {
 
 .brand {
     font-family: 'Martel', serif;
-    font-size: clamp(1.3rem, 2vw, 1.6rem);
-    letter-spacing: 0.08em;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    letter-spacing: 0.06em;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    flex-wrap: nowrap;
 }
 
 .brand span {
@@ -122,12 +165,13 @@ nav {
 }
 
 .brand-icon {
-    width: 36px;
-    height: 36px;
+    width: clamp(32px, 7vw, 40px);
+    height: clamp(32px, 7vw, 40px);
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
 }
 
 .brand-cristo {
@@ -136,14 +180,23 @@ nav {
 }
 
 .nav-toggle {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     color: white;
-    padding: 0.5rem 0.9rem;
+    padding: 0.65rem 1rem;
     border-radius: 999px;
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 2vw, 0.9rem);
     display: none;
     cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.nav-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
 }
 
 .nav-links {
@@ -169,15 +222,15 @@ nav {
 
 .surface {
     background: white;
-    border-radius: 32px;
-    padding: clamp(1.5rem, 4vw, 3rem);
-    margin-top: -2.5rem;
+    border-radius: 0;
+    padding: clamp(1.25rem, 4vw, 3rem);
+    margin-top: clamp(-1.5rem, -3vw, -2.5rem);
     position: relative;
     box-shadow: var(--shadow-elevated);
     background-image: url('assets/pattern.svg');
     background-repeat: no-repeat;
     background-position: right top;
-    background-size: 260px;
+    background-size: clamp(150px, 25vw, 260px);
 }
 
 .legacy-surface {
@@ -189,10 +242,10 @@ nav {
 .message-pager {
     display: flex;
     align-items: stretch;
-    gap: 1rem;
-    margin: 1.5rem 0 2rem;
-    padding: 1.25rem;
-    border-radius: 24px;
+    gap: clamp(0.75rem, 2vw, 1rem);
+    margin: clamp(1rem, 3vw, 1.5rem) 0 clamp(1.5rem, 3vw, 2rem);
+    padding: clamp(1rem, 2.5vw, 1.25rem);
+    border-radius: clamp(18px, 3.5vw, 24px);
     background: linear-gradient(120deg, rgba(255, 255, 255, 0.9), rgba(213, 228, 255, 0.6));
     border: 1px solid rgba(15, 47, 104, 0.15);
     box-shadow: 0 20px 45px rgba(15, 47, 104, 0.12);
@@ -210,13 +263,14 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 0.35rem;
-    padding: 1rem 1.25rem;
-    border-radius: 18px;
+    padding: clamp(0.85rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.25rem);
+    border-radius: clamp(14px, 3vw, 18px);
     border: 1px solid rgba(15, 47, 104, 0.2);
     background: white;
     text-decoration: none;
     color: var(--blue-900);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 60px;
 }
 
 .message-pager__link:hover,
@@ -238,11 +292,13 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 2vw, 1rem);
     font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--text-dark);
     text-transform: none;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .message-pager__arrow {
@@ -268,34 +324,44 @@ nav {
     color: var(--text-muted);
 }
 
+.legacy-scripture {
+    margin-left: calc(-1 * clamp(1.25rem, 4vw, 3rem));
+    margin-right: calc(-1 * clamp(1.25rem, 4vw, 3rem));
+    width: calc(100% + 2 * clamp(1.25rem, 4vw, 3rem));
+}
+
 .legacy-scripture blockquote {
     font-family: 'Martel', serif;
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.85;
     color: var(--blue-700);
     background: var(--gray-100);
-    border-radius: 28px;
-    padding: 1.5rem;
+    border-radius: 0;
+    padding: clamp(1.25rem, 3vw, 1.5rem);
     border: 1px solid var(--gray-300);
+    border-left: none;
+    border-right: none;
+    margin: 0;
+    text-align: center;
 }
 
 .legacy-message {
     background: linear-gradient(140deg, rgba(195, 218, 238, 0.4), rgba(249, 212, 223, 0.4));
-    border-radius: 28px;
-    padding: 1.5rem 1.75rem;
+    border-radius: clamp(18px, 4vw, 28px);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
     border: 1px solid var(--gray-300);
 }
 
 .legacy-message-card {
     background: white;
-    border-radius: 24px;
-    padding: 1.5rem;
+    border-radius: clamp(16px, 3.5vw, 24px);
+    padding: clamp(1.25rem, 3vw, 1.5rem);
     box-shadow: 0 15px 30px rgba(13, 28, 46, 0.12);
     border: 1px solid var(--gray-300);
 }
 
 .legacy-message .Deus {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.3vw, 1.1rem);
     line-height: 1.9;
 }
 
@@ -309,12 +375,15 @@ nav {
 .legacy-columns h3 {
     color: var(--blue-600);
     margin-bottom: 0.75rem;
+    font-size: clamp(1.15rem, 3vw, 1.3rem);
 }
 
 .legacy-article p,
 .legacy-columns p {
     color: var(--text-dark);
     text-align: justify;
+    line-height: 1.75;
+    font-size: clamp(1.25rem, 2.2vw, 1.2rem);
 }
 
 .legacy-article p + p {
@@ -323,14 +392,14 @@ nav {
 
 .legacy-columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: clamp(1.25rem, 3vw, 1.5rem);
 }
 
 .legacy-card {
     margin-top: 1rem;
-    padding: 1rem 1.2rem;
-    border-radius: 20px;
+    padding: clamp(1rem, 2.5vw, 1.2rem);
+    border-radius: clamp(16px, 3.5vw, 20px);
     background: var(--gray-100);
     border: 1px solid var(--gray-300);
 }
@@ -372,8 +441,8 @@ nav {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    width: min(360px, 100%);
-    padding: 0 1.5rem;
+    width: min(360px, calc(100% - 2rem));
+    padding: 0 clamp(1rem, 3vw, 1.5rem);
     border-radius: 999px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(229, 239, 255, 0.95));
     border: 1px solid rgba(15, 47, 104, 0.2);
@@ -386,11 +455,11 @@ nav {
     border: none;
     background: transparent;
     font-family: 'Martel', serif;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.2vw, 1rem);
     font-weight: 600;
     color: var(--blue-900);
     width: 100%;
-    padding: 0.85rem 2.5rem 0.85rem 0;
+    padding: clamp(0.75rem, 2vw, 0.85rem) 2.5rem clamp(0.75rem, 2vw, 0.85rem) 0;
     cursor: pointer;
 }
 
@@ -418,11 +487,16 @@ nav {
 }
 
 .year-block {
-    border-radius: 28px;
-    padding: 1.75rem;
+    border-radius: clamp(20px, 4vw, 28px);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
     background: white;
     border: 1px solid rgba(15, 47, 104, 0.12);
     box-shadow: 0 25px 45px rgba(15, 47, 104, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.year-block:hover {
+    box-shadow: 0 30px 55px rgba(15, 47, 104, 0.12);
 }
 
 .year-heading {
@@ -432,6 +506,7 @@ nav {
     letter-spacing: 0.08em;
     color: var(--blue-700);
     text-transform: uppercase;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 .year-content {
@@ -445,13 +520,14 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.95rem 2.75rem 0.95rem 1.2rem;
+    padding: clamp(0.85rem, 2.3vw, 0.95rem) clamp(2.5rem, 10vw, 2.75rem) clamp(0.85rem, 2.3vw, 0.95rem) clamp(1rem, 2.5vw, 1.2rem);
     border-radius: 999px;
     background: linear-gradient(130deg, var(--blue-700), var(--blue-600));
     color: white;
     cursor: pointer;
     box-shadow: 0 15px 28px rgba(15, 47, 104, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .month-toggle:hover {
@@ -478,17 +554,18 @@ nav {
 
 .month-toggle h4 {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 2vw, 0.9rem);
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    font-weight: 600;
 }
 
 .month-content {
     background: rgba(246, 248, 255, 0.95);
     border-left: 4px solid var(--blue-700);
-    margin: 0 0 1rem 0.6rem;
-    padding: 1rem 1.25rem;
-    border-radius: 0 22px 22px 22px;
+    margin: 0 0 1rem clamp(0rem, 1.5vw, 0.6rem);
+    padding: clamp(1rem, 2.5vw, 1.25rem);
+    border-radius: 0 clamp(16px, 3.5vw, 22px) clamp(16px, 3.5vw, 22px) clamp(16px, 3.5vw, 22px);
     box-shadow: 0 18px 32px rgba(15, 47, 104, 0.12);
 }
 
@@ -503,25 +580,32 @@ nav {
 .linkMensagem {
     position: relative;
     display: block;
-    padding: 0.85rem 2.75rem 0.85rem 1rem;
-    border-radius: 20px;
+    padding: clamp(0.85rem, 2.3vw, 1rem) clamp(2.5rem, 10vw, 2.75rem) clamp(0.85rem, 2.3vw, 1rem) clamp(1rem, 2.5vw, 1.2rem);
+    border-radius: clamp(16px, 3.5vw, 20px);
     text-decoration: none;
     color: var(--blue-900);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(229, 239, 255, 0.98));
     border: 1px solid rgba(15, 47, 104, 0.15);
     box-shadow: 0 10px 26px rgba(15, 47, 104, 0.12);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    line-height: 1.5;
+    line-height: 1.6;
+    font-size: clamp(0.9rem, 2.2vw, 1rem);
 }
 
 .linkMensagem::after {
     content: '\203A';
     position: absolute;
-    right: 1.25rem;
+    right: clamp(0.85rem, 2.5vw, 1.25rem);
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.2rem;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
     color: var(--blue-700);
+    transition: transform 0.2s ease;
+}
+
+.linkMensagem:hover::after,
+.linkMensagem:focus-visible::after {
+    transform: translateY(-50%) translateX(3px);
 }
 
 .linkMensagem:hover,
@@ -860,9 +944,9 @@ footer span {
     font-family: 'Martel', serif;
     font-style: italic;
     color: #333333;
-    line-height: 1.7;
+    line-height: 1.85;
     letter-spacing: 0.01em;
-    font-size: 1.08rem;
+    font-size: clamp(1rem, 2.3vw, 1.08rem);
 }
 
 .Deus {
@@ -870,7 +954,8 @@ footer span {
     font-weight: 600;
     color: #424040;
     letter-spacing: 0.01em;
-    font-size: 1.08rem;
+    line-height: 1.85;
+    font-size: clamp(1rem, 2.3vw, 1.08rem);
 }
 
 sup[class*="nota"] {
@@ -1007,13 +1092,15 @@ sup[class*="nota"]:focus-visible {
 .prayer-display {
     position: sticky;
     top: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: min(640px, 100%);
-    border-radius: 28px;
-    padding: 1.75rem;
+    margin-left: calc(-1 * clamp(1.25rem, 4vw, 3rem));
+    margin-right: calc(-1 * clamp(1.25rem, 4vw, 3rem));
+    width: calc(100% + 2 * clamp(1.25rem, 4vw, 3rem));
+    border-radius: 0;
+    padding: 1.75rem clamp(1.25rem, 4vw, 3rem);
     background: white;
     border: 1px solid rgba(15, 47, 104, 0.18);
+    border-left: none;
+    border-right: none;
     box-shadow: 0 30px 60px rgba(15, 47, 104, 0.18);
     z-index: 5;
     scroll-margin-top: 1.5rem;
@@ -1069,8 +1156,8 @@ sup[class*="nota"]:focus-visible {
 
 .prayer-block {
     background: white;
-    border-radius: 28px;
-    padding: 1.5rem 1.75rem;
+    border-radius: clamp(20px, 4vw, 28px);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
     border: 1px solid var(--gray-300);
     box-shadow: 0 12px 30px rgba(15, 47, 104, 0.08);
 }
@@ -1079,11 +1166,22 @@ sup[class*="nota"]:focus-visible {
     font-family: 'Martel', serif;
     color: var(--blue-700);
     margin-top: 0;
+    font-size: clamp(1.3rem, 3vw, 1.5rem);
+}
+
+.prayer-body {
+    margin-left: calc(-1 * clamp(1.25rem, 3vw, 1.75rem));
+    margin-right: calc(-1 * clamp(1.25rem, 3vw, 1.75rem));
+    width: calc(100% + 2 * clamp(1.25rem, 3vw, 1.75rem));
 }
 
 .prayer-body p {
     text-align: justify;
     color: var(--text-dark);
+    line-height: 1.8;
+    font-size: clamp(1.25rem, 2.2vw, 1.2rem);
+    padding-left: clamp(1.25rem, 3vw, 1.75rem);
+    padding-right: clamp(1.25rem, 3vw, 1.75rem);
 }
 
 .prayer-body p + p {
@@ -1163,20 +1261,23 @@ sup[class*="nota"]:focus-visible {
 
     .nav-links {
         position: absolute;
-        top: 74px;
+        top: clamp(70px, 12vw, 74px);
         right: 1.5rem;
         flex-direction: column;
         align-items: flex-start;
-        background: rgba(13, 28, 46, 0.95);
-        padding: 1rem 1.2rem;
-        border-radius: 22px;
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        width: min(300px, 85vw);
+        background: rgba(13, 28, 46, 0.97);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        padding: 1.2rem 1.4rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        width: min(300px, calc(100vw - 3rem));
         transform-origin: top right;
         transform: scaleY(0);
         opacity: 0;
         pointer-events: none;
-        transition: transform 0.2s ease, opacity 0.2s ease;
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     }
 
     .nav-links[data-open="true"] {
@@ -1185,17 +1286,34 @@ sup[class*="nota"]:focus-visible {
         pointer-events: auto;
     }
 
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        width: 100%;
+        display: block;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+    }
+
     nav {
         position: relative;
         flex-wrap: wrap;
+        padding: 0 clamp(1rem, 3vw, 1.5rem);
+    }
+
+    .hero {
+        padding: clamp(1.5rem, 4vw, 3rem) 1.5rem 0;
     }
 
     .surface {
-        margin-top: -1.5rem;
+        margin-top: clamp(-1rem, -2.5vw, -1.5rem);
     }
 
     .message-pager {
         flex-direction: column;
+        gap: 0.85rem;
     }
 
     .message-pager__spacer {
@@ -1203,7 +1321,19 @@ sup[class*="nota"]:focus-visible {
     }
 
     .message-pager__link--next {
-        text-align: left;
+        text-align: center;
+    }
+
+    .message-pager__link--prev {
+        text-align: center;
+    }
+
+    .legacy-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .text-flow {
+        columns: 1;
     }
 }
 
@@ -1212,18 +1342,24 @@ sup[class*="nota"]:focus-visible {
         padding: 0 1rem;
     }
 
+    .page-shell {
+        padding: 0 1rem 3rem;
+    }
+
     .hero {
         padding: 1.5rem 1rem 0;
         justify-content: center;
     }
 
     .hero-visual {
-        width: min(280px, 92vw);
-        padding: 0.9rem;
+        width: min(300px, 94vw);
+        padding: 1rem;
+        border-radius: 20px;
     }
 
     .hero-figure-main {
-        width: min(165px, 60vw);
+        width: min(180px, 65vw);
+        border-radius: 24px;
     }
 
     .hero-figure-frame {
@@ -1233,24 +1369,30 @@ sup[class*="nota"]:focus-visible {
 
     .custom-select {
         width: 100%;
+        padding: 0 1rem;
     }
 
     .year-block {
         padding: 1.25rem;
+        border-radius: 20px;
     }
 
     .month-content {
         margin-left: 0;
+        padding: 1rem;
+        border-radius: 0 16px 16px 16px;
     }
 
     .surface {
-        border-radius: 20px;
+        border-radius: 0;
         padding: 1.25rem;
     }
 
     .calendar-grid,
     .card-grid,
-    .lectio-grid {
+    .lectio-grid,
+    .prayer-grid,
+    .catalog-panels {
         grid-template-columns: 1fr;
     }
 
@@ -1261,8 +1403,57 @@ sup[class*="nota"]:focus-visible {
 
     .prayer-display {
         position: static;
-        width: 100%;
+        margin-left: calc(-1 * 1.25rem);
+        margin-right: calc(-1 * 1.25rem);
+        width: calc(100% + 2 * 1.25rem);
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
         box-shadow: 0 18px 36px rgba(15, 47, 104, 0.12);
+        padding: 1.5rem 1.25rem;
+    }
+
+    .legacy-scripture blockquote {
+        font-size: 1rem;
+        padding: 1.2rem;
+    }
+
+    .legacy-message {
+        padding: 1.25rem;
+        border-radius: 20px;
+    }
+
+    .legacy-message-card {
+        padding: 1.25rem;
+        border-radius: 18px;
+    }
+
+    .linkMensagem {
+        padding: 1rem 3rem 1rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .month-toggle {
+        padding: 0.9rem 2.75rem 0.9rem 1.1rem;
+    }
+
+    .message-pager {
+        padding: 1rem;
+        border-radius: 18px;
+        margin: 1rem 0 1.5rem;
+    }
+
+    .message-pager__link {
+        padding: 0.85rem;
+        min-height: 56px;
+    }
+
+    .message-pager__label {
+        font-size: 0.9rem;
+    }
+
+    .footnote-overlay__inner {
+        padding: 1rem 1.25rem 1.75rem;
     }
 }
 
@@ -1270,5 +1461,81 @@ sup[class*="nota"]:focus-visible {
     * {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+    }
+}
+
+/* Melhorias para telas extra pequenas (celulares pequenos) */
+@media (max-width: 360px) {
+    .brand {
+        font-size: 1rem;
+        letter-spacing: 0.04em;
+    }
+    
+    .brand-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .hero-figure-main {
+        width: min(160px, 60vw);
+    }
+    
+    .linkMensagem {
+        padding: 0.9rem 2.75rem 0.9rem 0.9rem;
+        font-size: 0.9rem;
+    }
+    
+    .message-pager__link {
+        padding: 0.75rem;
+        min-height: 52px;
+    }
+    
+    .surface {
+        padding: 1rem;
+    }
+}
+
+/* Melhorias para tablets em modo paisagem */
+@media (min-width: 600px) and (max-width: 900px) {
+    .legacy-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .text-flow {
+        columns: 2;
+        column-gap: 2rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .nav-toggle,
+    .linkMensagem,
+    .message-pager__link,
+    .month-toggle,
+    .prayer-option {
+        /* Maior área de toque para dispositivos touch */
+        min-height: 44px;
+    }
+    
+    .linkMensagem {
+        padding: 1rem 3rem 1rem 1.1rem;
+    }
+    
+    /* Remove efeito hover em dispositivos touch */
+    .linkMensagem:hover,
+    .message-pager__link:hover,
+    .month-toggle:hover {
+        transform: none;
+    }
+    
+    /* Mantém feedback visual apenas ao tocar */
+    .linkMensagem:active {
+        transform: scale(0.98);
+    }
+    
+    .message-pager__link:active,
+    .month-toggle:active {
+        transform: scale(0.98);
     }
 }
