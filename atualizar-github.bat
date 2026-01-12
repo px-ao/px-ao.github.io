@@ -14,11 +14,21 @@ git add .
 echo.
 
 echo [3/4] Fazendo commit...
-for /f "tokens=1-3 delims=/ " %%a in ('date /t') do set DATA=%%c-%%b-%%a
-for /f "tokens=1-2 delims=: " %%a in ('time /t') do set HORA=%%a%%b
-for /f "delims=" %%i in ('git diff --cached --name-only') do set ARQUIVOS=%%i & goto :done
-:done
-set mensagem=%DATA% %HORA% - %ARQUIVOS%
+echo Digite a mensagem do commit (ou aguarde 20 segundos para usar data-hora):
+echo.
+powershell -Command "$msg = ''; $job = Start-Job -ScriptBlock { Read-Host 'Mensagem' }; if (Wait-Job $job -Timeout 30) { $msg = Receive-Job $job }; Remove-Job $job -Force; if ($msg) { $msg | Out-File -Encoding ASCII -NoNewline commit_msg.tmp }" 2>nul
+
+if exist commit_msg.tmp (
+    set /p mensagem=<commit_msg.tmp
+    del commit_msg.tmp
+    echo Usando: %mensagem%
+) else (
+    for /f "tokens=1-3 delims=/ " %%a in ('date /t') do set DATA=%%c_%%b_%%a
+    for /f "tokens=1-2 delims=: " %%a in ('time /t') do set HORA=%%a%%b
+    set mensagem=%DATA%_%HORA%
+    echo Timeout - usando mensagem automatica: %mensagem%
+)
+
 git commit -m "%mensagem%"
 echo.
 
