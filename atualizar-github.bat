@@ -10,6 +10,7 @@ echo.
 
 echo [2/4] Adicionando arquivos modificados...
 git add .
+
 echo.
 
 echo [3/4] Fazendo commit...
