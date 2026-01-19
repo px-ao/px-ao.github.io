@@ -1365,12 +1365,12 @@ sup[class*="nota"]:focus-visible {
     }
 
     .hero-figure-main {
-        width: min(180px, 65vw);
+        width: min(160px, 65vw);
         border-radius: 24px;
     }
 
     .hero-figure-frame {
-        width: min(184px, 68vw);
+        width: min(160px, 68vw);
         transform: translate(-4px, 10px) rotate(0.5deg);
     }
 
