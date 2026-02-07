@@ -6,8 +6,10 @@ import tempfile
 import sys
 
 # Definição do arquivo de entrada (argumento ou padrão)
-input_file = sys.argv[1] if len(sys.argv) > 1 else "docs/15012026.docx"
-
+input_file = sys.argv[1] if len(sys.argv) > 1 else "docs/06022026.docx"
+if not os.path.isfile(input_file):
+    print(f"Arquivo de entrada não encontrado: {input_file}")
+    sys.exit(1)
 # Carrega o documento Word
 try:
     documento = Document(input_file)
