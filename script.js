@@ -185,6 +185,7 @@ const initMessageNavigator = () => {
             heading.classList.remove('open');
         } else {
             closeAllYears();
+            closeAllMonths();
             content.classList.remove('hidden');
             heading.classList.add('open');
         }
@@ -227,6 +228,7 @@ const initMessageNavigator = () => {
     });
 
     closeAllYears();
+    closeAllMonths();
 };
 
 initMessageNavigator();
