@@ -507,12 +507,45 @@ nav {
     color: var(--blue-700);
     text-transform: uppercase;
     font-size: clamp(1rem, 2.5vw, 1.2rem);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(246, 248, 255, 0.95);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 47, 104, 0.2);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.year-heading:hover {
+    box-shadow: 0 5px 14px rgba(15, 47, 104, 0.2);
+    transform: translateY(-1px);
+}
+
+.year-heading::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--blue-700);
+    border-bottom: 2px solid var(--blue-700);
+    transform: rotate(45deg);
+    margin-left: 0.75rem;
+    transition: transform 0.25s ease;
+}
+
+.year-heading.open::after {
+    transform: rotate(-135deg);
 }
 
 .year-content {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+}
+
+.year-content.hidden {
+    display: none;
 }
 
 .month-toggle {
