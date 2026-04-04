@@ -411,7 +411,7 @@ nav {
 }
 
 .legacy-footer-ornament img {
-    width: min(100px, 70%);
+    width: min(50px, 35%);
     opacity: 0.85;
 }
 
