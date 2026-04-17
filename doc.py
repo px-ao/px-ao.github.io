@@ -8,7 +8,7 @@ from docx.oxml import parse_xml
 from docx.opc.constants import RELATIONSHIP_TYPE as RT
 
 # Definição do arquivo de entrada (argumento ou padrão)
-input_file = sys.argv[1] if len(sys.argv) > 1 else "docs/11042026.docx"
+input_file = sys.argv[1] if len(sys.argv) > 1 else "docs/16042026.docx"
 if not os.path.isfile(input_file):
     print(f"Arquivo de entrada não encontrado: {input_file}")
     sys.exit(1)
