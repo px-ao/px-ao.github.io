@@ -63,7 +63,8 @@ const messageFiles = [
     , '0090_03042026.html'
     , '0091_05042026.html'
     , '0092_11042026.html'
-    , '0093_16042026.html'];
+    , '0093_16042026.html'
+    , '0094_26042026.html'];
 
 if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
