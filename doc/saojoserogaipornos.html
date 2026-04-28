@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Gerador Inteligente Mega-Sena</title>
+<style>
+    body { font-family: Arial; background: #0f172a; color: #fff; text-align: center; }
+    h1 { margin-top: 20px; }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #22c55e;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .jogo {
+        margin: 15px auto;
+        padding: 10px;
+        width: 300px;
+        background: #1e293b;
+        border-radius: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h1>🎲 Gerador Inteligente Mega-Sena</h1>
+<button onclick="gerarJogos()">Gerar 3 Jogos</button>
+
+<div id="resultado"></div>
+
+<script>
+function gerarNumero() {
+    return Math.floor(Math.random() * 60) + 1;
+}
+
+function gerarJogo() {
+    let numeros = new Set();
+
+    while (numeros.size < 6) {
+        numeros.add(gerarNumero());
+    }
+
+    let arr = Array.from(numeros).sort((a,b) => a-b);
+
+    // Validação inteligente
+    if (!valido(arr)) {
+        return gerarJogo(); // tenta novamente
+    }
+
+    return arr;
+}
+
+function valido(arr) {
+    let pares = arr.filter(n => n % 2 === 0).length;
+    let impares = 6 - pares;
+
+    // equilíbrio pares/ímpares
+    if (pares < 2 || pares > 4) return false;
+
+    // distribuição por faixa
+    let f1 = arr.filter(n => n <= 20).length;
+    let f2 = arr.filter(n => n > 20 && n <= 40).length;
+    let f3 = arr.filter(n => n > 40).length;
+
+    if (f1 === 0 || f2 === 0 || f3 === 0) return false;
+
+    // evitar sequências longas
+    let seq = 1;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] === arr[i-1] + 1) {
+            seq++;
+            if (seq >= 3) return false;
+        } else {
+            seq = 1;
+        }
+    }
+
+    return true;
+}
+
+function gerarJogos() {
+    let container = document.getElementById("resultado");
+    container.innerHTML = "";
+
+    for (let i = 1; i <= 3; i++) {
+        let jogo = gerarJogo();
+
+        let div = document.createElement("div");
+        div.className = "jogo";
+        div.innerHTML = `<strong>Jogo ${i}:</strong><br>${jogo.join(" - ")}`;
+
+        container.appendChild(div);
+    }
+}
+</script>
+
+</body>
+</html>
