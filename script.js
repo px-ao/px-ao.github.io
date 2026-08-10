@@ -246,8 +246,18 @@ const initMessagePagerLinks = () => {
     }
 
     const pathParts = window.location.pathname.split('/');
-    const currentFile = pathParts[pathParts.length - 1] || '';
-    const currentIndex = messageFiles.indexOf(currentFile);
+    const currentFile = decodeURIComponent((pathParts[pathParts.length - 1] || '').split('?')[0].split('#')[0]);
+
+    const getFileOrder = (file) => {
+        const match = file.match(/^(\d+)/);
+        return match ? Number.parseInt(match[1], 10) : Number.MAX_SAFE_INTEGER;
+    };
+
+    const orderedFiles = [...messageFiles].sort((a, b) => getFileOrder(a) - getFileOrder(b));
+    const filesWithCurrent = currentFile && !orderedFiles.includes(currentFile)
+        ? [...orderedFiles, currentFile].sort((a, b) => getFileOrder(a) - getFileOrder(b))
+        : orderedFiles;
+    const currentIndex = filesWithCurrent.indexOf(currentFile);
 
     if (currentIndex === -1) {
         return;
@@ -271,8 +281,8 @@ const initMessagePagerLinks = () => {
         element.classList.remove('is-disabled');
     };
 
-    const prevFile = currentIndex > 0 ? messageFiles[currentIndex - 1] : null;
-    const nextFile = currentIndex < messageFiles.length - 1 ? messageFiles[currentIndex + 1] : null;
+    const prevFile = currentIndex > 0 ? filesWithCurrent[currentIndex - 1] : null;
+    const nextFile = currentIndex < filesWithCurrent.length - 1 ? filesWithCurrent[currentIndex + 1] : null;
 
     applyLink(prevLink, prevFile);
     applyLink(nextLink, nextFile);
