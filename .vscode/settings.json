@@ -1,3 +1,4 @@
 {
-    "chatgpt.openOnStartup": false
+    "chatgpt.openOnStartup": false,
+    "livePreview.defaultPreviewPath": "/0098_21082026.html"
 }
